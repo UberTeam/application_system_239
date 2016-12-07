@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+label {
+    font-family: 'Verdana';
+    margin-bottom: 3px;
+    font-size: 13px;
+}
+
+.form-spoiler {
+    width: 100%;
+    border-left: solid 3px #a7c8fa;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+    .form-spoiler:hover {
+        border-left: solid 3px #84b5ff;
+    }
+
+    .form-spoiler input[type='checkbox'] {
+        display: none;
+    }
+
+    .form-spoiler label {
+        display: block !important;
+        width: 100%;
+        padding: 10px 20px;
+        font-family: 'Verdana';
+    }
+
+.form-container {
+    padding-left: 28px;
+/*    border-left: solid 2px #a7c8fa;*/
+    margin: 0 !important;
+}

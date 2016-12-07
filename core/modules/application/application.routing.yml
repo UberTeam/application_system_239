@@ -1,0 +1,14 @@
+application_form.rally_form:
+  path: '/rally_form'
+  defaults:
+    _title: 'Заявка для Ночного Ралли'
+    _form: '\Drupal\application\Form\RallyForm'
+  requirements:
+    _permission: 'access content'
+
+application_form.application_form:
+  path: '/application_form'
+  defaults:
+    _controller: '\Drupal\application\Controller\ApplicationFormController::helloWorld'
+  requirements:
+    _permission: 'view content'
