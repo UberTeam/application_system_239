@@ -6,8 +6,8 @@
 
 namespace Drupal\application\Form;
 
-use Drupal\Core\Form\FormBase;
-use Drupal\Core\Form\FormStateInterface;
+use FormBase;
+use FormStateInterface;
 
 //function rally_form_attachments(array &$attachments) {
 //  // Первый helloworld - название модуля, а второй - название либы из yml файла.
