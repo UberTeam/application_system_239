@@ -14,10 +14,10 @@ use Drupal\Core\Form\FormStateInterface;
 //    $attachments['#attached']['library'][] = 'application/application-form';
 //}
 
-class RallyForm extends FormBase {
+class KtmForm extends FormBase {
 
     public function getFormId() {
-        return 'rally_form';
+        return 'ktm_form';
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
