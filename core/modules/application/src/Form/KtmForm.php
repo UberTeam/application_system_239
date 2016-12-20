@@ -112,130 +112,6 @@ class KtmForm extends FormBase {
 
         $form['radio_subscribers_container']['radio_subscribers'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\RadioSubscribersTec');
 
-//        Ноутбуки
-
-        $form['laptops_spoiler'] = array(
-          '#type' => 'container',
-          '#attributes' => array(
-            'class' => 'form-spoiler',
-          )
-        );
-
-        $form['laptops_spoiler']['laptops_checkbox'] = array(
-          '#type' => 'checkbox',
-          '#title' => 'Ноутбуки',
-          '#attributes' => array(
-            'checked' => TRUE,
-          ),
-        );
-
-        $form['laptops_container'] = array(
-          '#type' => 'container',
-          '#attributes' => array(
-            'class' => 'form-container',
-          ),
-          '#states' => array(
-            'invisible' => array(
-              'input[name="laptops_checkbox"]' => array('checked' => FALSE),
-            ),
-          ),
-        );
-
-        $form['laptops_container']['laptops'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\LaptopsTec');
-
-//        Электричество
-
-        $form['electricity_spoiler'] = array(
-            '#type' => 'container',
-            '#attributes' => array(
-                'class' => 'form-spoiler',
-            )
-        );
-
-        $form['electricity_spoiler']['electricity_checkbox'] = array(
-            '#type' => 'checkbox',
-            '#title' => 'Электричество',
-            '#attributes' => array(
-                'checked' => TRUE,
-            ),
-        );
-
-        $form['electricity_container'] = array(
-            '#type' => 'container',
-            '#attributes' => array(
-                'class' => 'form-container',
-            ),
-            '#states' => array(
-                'invisible' => array(
-                    'input[name="electricity_checkbox"]' => array('checked' => FALSE),
-                ),
-            ),
-        );
-
-        $form['electricity_container']['electricity'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\ElectricityEq');
-
-//        Установка экрана
-
-        $form['screen_installation_spoiler'] = array(
-            '#type' => 'container',
-            '#attributes' => array(
-                'class' => 'form-spoiler',
-            )
-        );
-
-        $form['screen_installation_spoiler']['screen_installation_checkbox'] = array(
-            '#type' => 'checkbox',
-            '#title' => 'Установка экрана',
-            '#attributes' => array(
-                'checked' => TRUE,
-            ),
-        );
-
-        $form['screen_installation_container'] = array(
-            '#type' => 'container',
-            '#attributes' => array(
-                'class' => 'form-container',
-            ),
-            '#states' => array(
-                'invisible' => array(
-                    'input[name="screen_installation_checkbox"]' => array('checked' => FALSE),
-                ),
-            ),
-        );
-
-        $form['screen_installation_container']['screen_installation'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\InstallationWor');
-
-//        Объем древообработки
-
-        $form['woodworking_spoiler'] = array(
-            '#type' => 'container',
-            '#attributes' => array(
-                'class' => 'form-spoiler',
-            )
-        );
-
-        $form['woodworking_spoiler']['woodworking_checkbox'] = array(
-            '#type' => 'checkbox',
-            '#title' => 'Объем древообработки',
-            '#attributes' => array(
-                'checked' => TRUE,
-            ),
-        );
-
-        $form['woodworking_container'] = array(
-            '#type' => 'container',
-            '#attributes' => array(
-                'class' => 'form-container',
-            ),
-            '#states' => array(
-                'invisible' => array(
-                    'input[name="woodworking_checkbox"]' => array('checked' => FALSE),
-                ),
-            ),
-        );
-
-        $form['woodworking_container']['woodworking'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\WoodworkingVolumeWor');
-
 
 //        Специальное оборудование
 
@@ -266,7 +142,7 @@ class KtmForm extends FormBase {
           ),
         );
 
-        $form['special_eq_container']['special_eq'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\RallyEq');
+        $form['special_eq_container']['special_eq'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\KtmEq');
 
 //        $form['special_eq'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\RallyEq');
 
