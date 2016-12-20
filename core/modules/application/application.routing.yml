@@ -6,13 +6,13 @@ application_form.rally_form:
   requirements:
     _permission: 'access content'
 
- application_form.ktm_form:
+application_form.ktm_form:
   path: '/ktm_form'
   defaults:
     _title: 'Заявка для КТМ'
     _form: '\Drupal\application\Form\KtmForm'
   requirements:
-    _permission: 'access content'   
+    _permission: 'view content'
 
 application_form.application_form:
   path: '/application_form'
