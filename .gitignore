@@ -34,6 +34,7 @@ xmlrpc.php
 /profiles
 /scripts
 /themes
+/.idea
 
 # =========================
 # Operating System Files
