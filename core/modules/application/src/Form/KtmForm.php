@@ -1,18 +1,13 @@
 <?php
 /**
  * @file
- * Contains \Drupal\application\Form\RallyForm.
+ * Contains \Drupal\application\Form\KtmForm.
  */
 
 namespace Drupal\application\Form;
 
-use FormBase;
-use FormStateInterface;
-
-//function rally_form_attachments(array &$attachments) {
-//  // Первый helloworld - название модуля, а второй - название либы из yml файла.
-//    $attachments['#attached']['library'][] = 'application/application-form';
-//}
+use Drupal\Core\Form\FormBase;
+use Drupal\Core\Form\FormStateInterface;
 
 class KtmForm extends FormBase {
 
