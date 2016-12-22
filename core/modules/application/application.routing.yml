@@ -14,6 +14,15 @@ application_form.bike_cross_form:
   requirements:
     _permission: 'access content'
 
+application_form.orienteering_form:
+  path: '/orienteering_form'
+  defaults:
+    _title: 'Заявка для Ориентирования/Лабиринта'
+    _form: '\Drupal\application\Form\OrienteeringForm'
+  requirements:
+    _permission: 'access content'
+
+
 application_form.bonfire_form:
   path: '/bonfire_form'
   defaults:
