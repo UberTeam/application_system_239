@@ -14,6 +14,14 @@ application_form.bike_cross_form:
   requirements:
     _permission: 'access content'
 
+application_form.obstacle_form:
+  path: '/obstacle_form'
+  defaults:
+    _title: 'Заявка для Полосы препятствий'
+    _form: '\Drupal\application\Form\ObstacleForm'
+  requirements:
+    _permission: 'access content'    
+
 application_form.orienteering_form:
   path: '/orienteering_form'
   defaults:
