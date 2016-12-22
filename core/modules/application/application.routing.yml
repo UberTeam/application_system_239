@@ -28,7 +28,15 @@ application_form.ktm_form:
     _title: 'Заявка для КТМ'
     _form: '\Drupal\application\Form\KtmForm'
   requirements:
-    _permission: 'access content'   
+    _permission: 'access content' 
+
+application_form.ddm_form:
+  path: '/ddm_form'
+  defaults:
+    _title: 'Заявка для ДДМ'
+    _form: '\Drupal\application\Form\DdmForm'
+  requirements:
+    _permission: 'access content'      
 
 application_form.application_form:
   path: '/application_form'
