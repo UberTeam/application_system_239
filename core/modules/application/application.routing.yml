@@ -39,6 +39,14 @@ application_form.bonfire_form:
   requirements:
     _permission: 'access content'
 
+application_form.photocross_form:
+  path: '/photocross_form'
+  defaults:
+    _title: 'Заявка для Фотокросса'
+    _form: '\Drupal\application\Form\PhotocrossForm'
+  requirements:
+    _permission: 'access content'    
+
 application_form.ktm_form:
   path: '/ktm_form'
   defaults:
