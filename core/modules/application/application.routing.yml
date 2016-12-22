@@ -6,6 +6,14 @@ application_form.rally_form:
   requirements:
     _permission: 'access content'
 
+application_form.bike_cross_form:
+  path: '/bike_cross_form'
+  defaults:
+    _title: 'Заявка для Велокросса'
+    _form: '\Drupal\application\Form\BikeCrossForm'
+  requirements:
+    _permission: 'access content'
+
 application_form.bonfire_form:
   path: '/bonfire_form'
   defaults:
