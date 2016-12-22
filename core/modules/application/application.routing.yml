@@ -36,7 +36,15 @@ application_form.ddm_form:
     _title: 'Заявка для ДДМ'
     _form: '\Drupal\application\Form\DdmForm'
   requirements:
-    _permission: 'access content'      
+    _permission: 'access content' 
+
+application_form.lunch_form:
+  path: '/lunch_form'
+  defaults:
+    _title: 'Заявка для Конкурса обедов'
+    _form: '\Drupal\application\Form\LunchForm'
+  requirements:
+    _permission: 'access content'         
 
 application_form.application_form:
   path: '/application_form'
