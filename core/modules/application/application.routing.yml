@@ -47,6 +47,14 @@ application_form.ktm_form:
   requirements:
     _permission: 'access content' 
 
+application_form.tvt_form:
+  path: '/tvt_form'
+  defaults:
+    _title: 'Заявка для ТВТ'
+    _form: '\Drupal\application\Form\TvtForm'
+  requirements:
+    _permission: 'access content'     
+
 application_form.ddm_form:
   path: '/ddm_form'
   defaults:
