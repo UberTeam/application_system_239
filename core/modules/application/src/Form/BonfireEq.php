@@ -26,7 +26,7 @@ class BonfireEq extends FormBase {
             )
         );
 
-            $form['screen'] = array(
+        $form['screen'] = array(
             '#type' => 'number',
             '#title' => 'Экран',
             '#required' => TRUE,
@@ -35,7 +35,7 @@ class BonfireEq extends FormBase {
             )
         );
 
-                $form['speakers'] = array(
+        $form['speakers'] = array(
             '#type' => 'number',
             '#title' => 'Колонки',
             '#required' => TRUE,
@@ -44,7 +44,7 @@ class BonfireEq extends FormBase {
             )
         );    
 
-                $form['microphones'] = array(
+        $form['microphones'] = array(
             '#type' => 'number',
             '#title' => 'Микрофоны',
             '#required' => TRUE,
@@ -54,7 +54,7 @@ class BonfireEq extends FormBase {
         );
 
         
-            $form['mixer'] = array(
+        $form['mixer'] = array(
             '#type' => 'number',
             '#title' => 'Микшер(?)',
             '#required' => TRUE,
@@ -68,7 +68,7 @@ class BonfireEq extends FormBase {
             '#title' => 'Бензин'
         );
 
-                   $form['jerrycan'] = array(
+        $form['jerrycan'] = array(
             '#type' => 'number',
             '#title' => 'Канистры',
             '#required' => TRUE,
@@ -77,7 +77,7 @@ class BonfireEq extends FormBase {
             )
         );
 
-                    $form['rag'] = array(
+        $form['rag'] = array(
             '#type' => 'number',
             '#title' => 'Тряпки',
             '#required' => TRUE,

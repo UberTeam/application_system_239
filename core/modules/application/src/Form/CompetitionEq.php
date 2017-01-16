@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains \Drupal\application\Form\CompetitionEq.
+ * Contains \Drupal\application\Form\Equipment\CompetitionEq.
  */
 
 namespace Drupal\application\Form;
@@ -47,7 +47,7 @@ class CompetitionEq extends FormBase {
 
         $form['lightning'] = array(
             '#type' => 'number',
-            '#title' => 'Осветительные устройства',
+            '#title' => 'Лампы',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
@@ -65,7 +65,7 @@ class CompetitionEq extends FormBase {
 
         $form['chairs'] = array(
             '#type' => 'number',
-            '#title' => 'Стулья',
+            '#title' => 'Табуретки',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
@@ -73,7 +73,7 @@ class CompetitionEq extends FormBase {
         );
 
         $form['scotch_tape'] = array(
-            '#type' => 'number',
+            '#type' => 'hidden',
             '#title' => 'Скотч',
             '#required' => TRUE,
             '#attributes' => array (
@@ -82,7 +82,7 @@ class CompetitionEq extends FormBase {
         );
 
         $form['twill_tape'] = array(
-            '#type' => 'number',
+            '#type' => 'hidden',
             '#title' => 'Киперная лента',
             '#required' => TRUE,
             '#attributes' => array (

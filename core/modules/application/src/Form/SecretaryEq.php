@@ -19,7 +19,7 @@ class SecretaryEq extends FormBase {
 
         $form['yellow_west'] = array(
             '#type' => 'number',
-            '#title' => 'Жёлтые желетки',
+            '#title' => 'Желтые желетки',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
@@ -28,17 +28,11 @@ class SecretaryEq extends FormBase {
 
         $form['tablets'] = array(
             '#type' => 'number',
-            '#title' => 'Планшеты',
+            '#title' => 'Планшеты (клипборды)',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
-        );
-
-        $form['printing_stuff'] = array(
-            '#type' => 'textfield',
-            '#title' => 'Печатные материалы',
-            '#required' => TRUE
         );
 
 

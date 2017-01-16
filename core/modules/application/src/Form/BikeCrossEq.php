@@ -17,6 +17,19 @@ class BikeCrossEq extends FormBase {
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
+        $form['bikes_rent_label'] = array(
+            '#type' => 'label',
+            '#title' => 'Аренда великов',
+            '#attributes' => array (
+                'class' => 'detached'
+            )
+        );
+
+        $form['bikes_rent'] = array(
+            '#type' => 'checkbox',
+            '#title' => 'Я хочу арендовать велосипеды'
+        );
+
         $form['shaped_puncher'] = array(
             '#type' => 'number',
             '#title' => 'Дырокол фигурный',

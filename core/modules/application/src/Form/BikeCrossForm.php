@@ -85,13 +85,6 @@ class BikeCrossForm extends FormBase {
         );
 
         $form['secretary_eq_container']['secretary_eq'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\SecretaryEq');
-
-//        аренда великов
-
-          $form['bike_rent'] = array(
-            '#type' => 'checkbox',
-            '#title' => 'Аренда великов'
-        );
           
 //        Радио абоненты
 

@@ -18,26 +18,18 @@ class PhotocrossEq extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state) {
 
         $form['printer'] = array(
-            '#type' => 'number',
-            '#title' => 'Принтер',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
+            '#type' => 'checkbox',
+            '#title' => 'Добавить принтер'
         );
 
         $form['reader'] = array(
-            '#type' => 'number',
-            '#title' => 'Картридер',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
+            '#type' => 'checkbox',
+            '#title' => 'Добавить картридер'
         );
 
         $form['usb_cable'] = array(
             '#type' => 'number',
-            '#title' => 'Юсб-кабели',
+            '#title' => 'USB-кабели для мобильных устройств и камер',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
@@ -78,7 +70,7 @@ class PhotocrossEq extends FormBase {
 
         $form['staple_gun'] = array(
             '#type' => 'number',
-            '#title' => 'Стэплер',
+            '#title' => 'Строительный стэплер',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
