@@ -8,6 +8,27 @@ label {
     font-size: 13px;
 }
 
+    label.detached {
+        margin-bottom: -10px;
+    }
+
+.size-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+    input.size {
+        width: 76px;
+    }
+
+    .separator {
+        display: inline-flex;
+        font-weight: 600;
+        font-size: 18px;
+
+        margin: 0 6px 0 6px;
+    }
+
 .form-spoiler {
     width: 100%;
     border-left: solid 3px #a7c8fa;

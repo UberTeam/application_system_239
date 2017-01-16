@@ -26,9 +26,56 @@ class KtmEq extends FormBase {
             )
         );
 
-        $form['plywood_size'] = array(
-            '#type' => 'checkbox',
+        $form['plywood_label'] = array(
+            '#type' => 'label',
             '#title' => 'Фанера'
+        );
+
+        $form['plywood'] = array(
+            '#type' => 'checkbox',
+            '#title' => 'Добавить лист фанеры'
+        );
+
+        $form['plywood_size'] = array(
+            '#type' => 'container',
+            '#title' => 'Размер',
+            '#states' => array(
+                'invisible' => array(
+                    'input[name="plywood"]' => array('checked' => false),
+                ),
+            ),
+            '#attributes' => array(
+                'class' => 'size_wrapper'
+            )
+        );
+
+        $form['plywood_size']['width'] = array(
+            '#type' => 'html_tag',
+            '#tag' => 'input',
+            '#attributes' => array(
+                'type' => 'text',
+                'maxlength' => '3',
+                'class' => array('size', 'width')
+            ),
+        );
+
+        $form['plywood_size']['separator'] = array(
+            '#type' => 'html_tag',
+            '#tag' => 'div',
+            '#value' => '&#215;',
+            '#attributes' => array(
+                'class' => 'separator'
+            ),
+        );
+
+        $form['plywood_size']['height'] = array(
+            '#type' => 'html_tag',
+            '#tag' => 'input',
+            '#attributes' => array(
+                'type' => 'text',
+                'maxlength' => '3',
+                'class' => array('size', 'height')
+            ),
         );
 
         $form['printing_stuff'] = array(
