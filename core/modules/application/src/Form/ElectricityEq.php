@@ -27,7 +27,7 @@ class ElectricityEq extends FormBase {
         );
 
         $form['sockets'] = array(
-            '#type' => 'number',
+            '#type' => 'hidden',
             '#title' => 'Количество необходимых розеток',
             '#required' => TRUE,
             '#attributes' => array (
@@ -36,7 +36,7 @@ class ElectricityEq extends FormBase {
         );
 
         $form['sockets_extenders'] = array(
-            '#type' => 'number',
+            '#type' => 'hidden',
             '#title' => 'Количество удлинителей',
             '#required' => TRUE,
             '#attributes' => array (
