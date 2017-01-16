@@ -17,9 +17,26 @@ class BannerInstallationWor extends FormBase {
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
-        $form['name'] = array(
+/*        $form['name'] = array(
             '#type' => 'textfield',
             '#title' => 'Наименование баннера',
+            '#required' => TRUE
+        );*/
+
+        $form['name'] = array(
+            '#type' => 'select',
+            '#title' => 'Наименование баннера',
+            '#options' => [
+                '1' => 'КТМ',
+                '2' => 'Лабиринт',
+                '3' => 'Конкурс обедов',
+                '4' => 'Ночное ралли',
+                '5' => 'Ориентирование',
+                '6' => 'Полоса',
+                '7' => 'ТВТ',
+                '8' => 'Старт',
+                '9' => 'Финиш',
+            ],
             '#required' => TRUE
         );
 
