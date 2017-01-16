@@ -77,7 +77,22 @@ application_form.lunch_form:
     _title: 'Заявка для Конкурса обедов'
     _form: '\Drupal\application\Form\LunchForm'
   requirements:
-    _permission: 'access content'         
+    _permission: 'access content'
+
+application_form.infocentre_form:
+  path: '/infocentre_form'
+  defaults:
+    _title: 'Заявка для Инфоцентра'
+    _form: '\Drupal\application\Form\InfocentreForm'
+  requirements:
+    _permission: 'access content'
+
+application_form.rally:
+  path: '/rally'
+  defaults:
+    _controller: '\Drupal\application\Controller\RallyController::showPage'
+  requirements:
+    _permission: 'access content'
 
 application_form.application_form:
   path: '/application_form'
