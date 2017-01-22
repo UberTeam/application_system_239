@@ -88,11 +88,12 @@ application_form.infocentre_form:
     _permission: 'access content'
 
 application_form.rally:
-  path: '/rally'
+  path: '/rally/{page_id}'
   defaults:
     _controller: '\Drupal\application\Controller\RallyController::showPage'
   requirements:
     _permission: 'access content'
+    page_id: \d+
 
 application_form.application_form:
   path: '/application_form'

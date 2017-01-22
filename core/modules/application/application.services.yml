@@ -1,0 +1,6 @@
+services:
+ application.rally_model:
+  class: Drupal\application\Model\RallyModel
+  arguments: ['@database']
+  tags:
+   - { name: backend_overridable }
