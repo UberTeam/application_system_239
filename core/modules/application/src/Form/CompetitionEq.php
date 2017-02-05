@@ -103,7 +103,7 @@ class CompetitionEq extends FormBase {
         );
 
         $form['banner_installation']['banner_installation_wor'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\BannerInstallationWor');
-
+        
         return $form;
     }
 

@@ -4,3 +4,6 @@ services:
   arguments: ['@database']
   tags:
    - { name: backend_overridable }
+
+ application.service_class:
+   class: Drupal\application\Controller\ServiceController

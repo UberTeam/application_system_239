@@ -56,3 +56,28 @@ label {
 /*    border-left: solid 2px #a7c8fa;*/
     margin: 0 !important;
 }
+
+div.map {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    justify-self: flex-start;
+
+    border: 2px solid #bbbbbb;
+    border-radius: 4px;
+
+    font-family: 'Verdana';
+    font-size: 9px;
+}
+
+    div.map .step {
+        border-right: 2px solid #bbbbbb;
+        padding: 8px 12px;
+    }
+
+        div.map .step:last-child {
+            border-right: 0px;
+        }
+
+        div.map .step.active {
+            background: #efefef;
+        }

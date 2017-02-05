@@ -9,3 +9,7 @@ function application_theme($existing, $type, $theme, $path) {
         ),
     );
 }
+
+function application_page_attachments(array &$attachments) {
+    $attachments['#attached']['library'][] = 'application/application-form';
+}

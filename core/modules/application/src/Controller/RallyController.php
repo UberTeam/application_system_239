@@ -34,7 +34,7 @@ class RallyController extends ControllerBase {
         $this->page_id = $page_id;
 
         $this->form_names = [
-            ['\CompetitionEq', 'Оборудование Соревнования'],
+            ['\CompetitionEq', 'Оборудование соревнования'],
             ['\SecretaryEq', 'Секретарское оборудование'],
             ['\RadioSubscribersTec', 'Радио абоненты'],
             ['\LaptopsTec', 'Ноутбуки'],
@@ -57,8 +57,9 @@ class RallyController extends ControllerBase {
 
         $path_to_form = 'Drupal\application\Form' . $this->current_form[0];
 
-        $output = \Drupal::formBuilder()->getForm($path_to_form);
+        $output = \Drupal::formBuilder()->getForm('Drupal\application\Form\WrapperForm', $path_to_form);
 
+        $page['#attached']['library'][] = 'application/application-form';
 //        $test_array = array(
 //            'field_name' => 'marquee',
 //            'value' => '1',
@@ -73,6 +74,7 @@ class RallyController extends ControllerBase {
             '#theme' => 'rally',
             '#data' => array(
                 'title' => $this->current_form[1],
+                'form_names' => $this->form_names,
                 'form' => $output
             )
         );
