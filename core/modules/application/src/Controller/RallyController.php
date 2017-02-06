@@ -51,7 +51,7 @@ class RallyController extends ControllerBase {
         return $this->form_names[$page_id - 1];
     }
 
-    public function showPage($page_id) {
+    public function showPage($service, $page_id) {
 
         $this->definePage($page_id);
 

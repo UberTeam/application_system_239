@@ -1,98 +1,11 @@
-application_form.rally_form:
-  path: '/rally_form'
-  defaults:
-    _title: 'Заявка для Ночного Ралли'
-    _form: '\Drupal\application\Form\RallyForm'
-  requirements:
-    _permission: 'access content'
-
-application_form.bike_cross_form:
-  path: '/bike_cross_form'
-  defaults:
-    _title: 'Заявка для Велокросса'
-    _form: '\Drupal\application\Form\BikeCrossForm'
-  requirements:
-    _permission: 'access content'
-
-application_form.obstacle_form:
-  path: '/obstacle_form'
-  defaults:
-    _title: 'Заявка для Полосы препятствий'
-    _form: '\Drupal\application\Form\ObstacleForm'
-  requirements:
-    _permission: 'access content'    
-
-application_form.orienteering_form:
-  path: '/orienteering_form'
-  defaults:
-    _title: 'Заявка для Ориентирования/Лабиринта'
-    _form: '\Drupal\application\Form\OrienteeringForm'
-  requirements:
-    _permission: 'access content'
-
-
-application_form.bonfire_form:
-  path: '/bonfire_form'
-  defaults:
-    _title: 'Заявка для Большого костра'
-    _form: '\Drupal\application\Form\BonfireForm'
-  requirements:
-    _permission: 'access content'
-
-application_form.photocross_form:
-  path: '/photocross_form'
-  defaults:
-    _title: 'Заявка для Фотокросса'
-    _form: '\Drupal\application\Form\PhotocrossForm'
-  requirements:
-    _permission: 'access content'    
-
-application_form.ktm_form:
-  path: '/ktm_form'
-  defaults:
-    _title: 'Заявка для КТМ'
-    _form: '\Drupal\application\Form\KtmForm'
-  requirements:
-    _permission: 'access content' 
-
-application_form.tvt_form:
-  path: '/tvt_form'
-  defaults:
-    _title: 'Заявка для ТВТ'
-    _form: '\Drupal\application\Form\TvtForm'
-  requirements:
-    _permission: 'access content'     
-
-application_form.ddm_form:
-  path: '/ddm_form'
-  defaults:
-    _title: 'Заявка для ДДМ'
-    _form: '\Drupal\application\Form\DdmForm'
-  requirements:
-    _permission: 'access content' 
-
-application_form.lunch_form:
-  path: '/lunch_form'
-  defaults:
-    _title: 'Заявка для Конкурса обедов'
-    _form: '\Drupal\application\Form\LunchForm'
-  requirements:
-    _permission: 'access content'
-
-application_form.infocentre_form:
-  path: '/infocentre_form'
-  defaults:
-    _title: 'Заявка для Инфоцентра'
-    _form: '\Drupal\application\Form\InfocentreForm'
-  requirements:
-    _permission: 'access content'
 
 application_form.rally:
-  path: '/rally/{page_id}'
+  path: '/application/{service_name}/{page_id}'
   defaults:
-    _controller: '\Drupal\application\Controller\RallyController::showPage'
+    _controller: '\Drupal\application\Controller\ServiceController::showPage'
   requirements:
     _permission: 'access content'
+    service_name: rally|bike_cross|obstacle|orienteering|bonfire|photocross|ktm|tvt|ddm|lunch|infocentre
     page_id: \d+
 
 application_form.application_form:
