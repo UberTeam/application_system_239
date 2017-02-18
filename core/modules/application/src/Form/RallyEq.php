@@ -9,13 +9,15 @@ namespace Drupal\application\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class RallyEq extends FormBase {
+class RallyEq extends WrapperFormBase {
 
     public function getFormId() {
         return 'rally_eq';
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
+
+        $form = parent::buildForm($form, $form_state);
 
         $form['swimming_candles'] = array(
             '#type' => 'number',
@@ -31,11 +33,12 @@ class RallyEq extends FormBase {
             '#title' => 'Хочу видеотрансляцию'
         );
 
-        $form['printing_stuff'] = array(
-            '#type' => 'textfield',
-            '#title' => 'Печатные материалы',
-            '#required' => TRUE
+        $form['printing_stuff_label'] = array(
+            '#type' => 'label',
+            '#title' => 'Печатные материалы'
         );
+
+        $form['printing_stuff'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PrintingStuffEq');
 
         $form['something_else'] = array(
             '#type' => 'textarea',
@@ -45,17 +48,17 @@ class RallyEq extends FormBase {
         return $form;
     }
 
-    public function validateForm(array &$form, FormStateInterface $form_state) {
-    //    if (strlen($form_state->getValue('name')) < 5) {
-    //      $form_state->setErrorByName('name', $this->t('Name is too short.'));
-    //    }
-    }
-
-    public function submitForm(array &$form, FormStateInterface $form_state) {
-//        drupal_set_message($this->t('@one, @two', array(
-//            '@one' => $form_state->getValue('competition_eq'),
-//            '@two' => $form_state->getValue('secretary_eq')
-//        )));
-    }
+//    public function validateForm(array &$form, FormStateInterface $form_state) {
+//    //    if (strlen($form_state->getValue('name')) < 5) {
+//    //      $form_state->setErrorByName('name', $this->t('Name is too short.'));
+//    //    }
+//    }
+//
+//    public function submitForm(array &$form, FormStateInterface $form_state) {
+////        drupal_set_message($this->t('@one, @two', array(
+////            '@one' => $form_state->getValue('competition_eq'),
+////            '@two' => $form_state->getValue('secretary_eq')
+////        )));
+//    }
 
 }

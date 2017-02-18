@@ -49,18 +49,11 @@ class ServiceController {
 
         $path_to_form = 'Drupal\application\Form' . $this->current_form[0];
 
-        $output = \Drupal::formBuilder()->getForm('Drupal\application\Form\WrapperForm', $path_to_form);
+        $is_last_page = $this->lastPageFlag();
+        
+        $output = \Drupal::formBuilder()->getForm($path_to_form, $is_last_page);
 
         $page['#attached']['library'][] = 'application/application-form';
-//        $test_array = array(
-//            'field_name' => 'marquee',
-//            'value' => '1',
-//            'title' => 'Шатер'
-//        );
-//
-//        $db_logic = \Drupal::service('application.rally_model');
-//
-//        $db_logic->add($test_array);
 
         return array(
             '#theme' => 'form_page',
@@ -72,9 +65,48 @@ class ServiceController {
         );
     }
 
-    public function nextPage($form) {
+    public function nextStep($form_state, $formobj) {
+
         $route_match = \Drupal::routeMatch();
+
+        $result = array();
+
+        $form = $form_state->getUserInput();
+
+        foreach($form as $key => $field) {
+            if (preg_match('/form/', $key) === 0 && $key !== 'submit') {
+                array_push($result, array(
+                    'table_name' => $formobj['#attributes']['data-drupal-selector'],
+                    'field_name' => $key,
+                    'value' => $field,
+                    'title' => $formobj[$key]['#title'],
+                    'service' => $route_match->getRawParameter('service_name')
+                ));
+            }
+        }
+
+//        $test_array = array(
+//            'field_name' => 'marquee',
+//            'value' => '1',
+//            'title' => 'Шатер'
+//        );
+//
+        $db_logic = \Drupal::service('application.rally_model');
+
+        foreach ($result as $row) {
+            $db_logic->add($row);;
+        }
+
+        $is_last = $this->lastPageFlag();
+
         $page_number = $route_match->getRawParameter('page_id');
+
+        if (!$is_last) {
+            $this->nextPage($form_state, $page_number);
+        }
+    }
+
+    private function nextPage($form, $page_number) {
 
         $current_path = \Drupal::service('path.current')->getPath();
 
@@ -169,4 +201,15 @@ class ServiceController {
         );
         return $all_forms;
     }
+
+    public function lastPageFlag() {
+        $route_match = \Drupal::routeMatch();
+
+        $page_number = $route_match->getRawParameter('page_id');
+
+        $last_page = count($this->form);
+
+        return $last_page + 0 == $page_number + 0;
+    }
+
 }

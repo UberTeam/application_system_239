@@ -39,10 +39,11 @@ class RallyModel
 	   $query = $this->database->insert('preview');
 
 	   $query->fields(array(
+		   'table_name' => $position['table_name'],
            'field_name' => $position['field_name'],
            'value' => $position['value'],
            'title' => $position['title'],
-           'service' => 'rally',
+           'service' => $position['service']
 	   ));
 
 	   return $query->execute();

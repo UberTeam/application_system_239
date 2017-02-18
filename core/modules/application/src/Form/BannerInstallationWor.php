@@ -39,8 +39,12 @@ class BannerInstallationWor extends FormBase {
             ],
             '#required' => TRUE
         );
-
-        $form['installation'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\InstallationWor');
+        
+        $form['install_datetime'] = array(
+            '#type' => 'date',
+            '#title' => 'К какому сроку должно быть готово',
+            '#required' => TRUE
+        );
 
         return $form;
     }

@@ -14,22 +14,18 @@ use Drupal\Core\Form\FormStateInterface;
 //    $attachments['#attached']['library'][] = 'application/application-form';
 //}
 
-class WrapperForm extends FormBase {
+abstract class WrapperFormBase extends FormBase {
 
-    public function getFormId() {
-        return 'wrapper_form';
-    }
+//    public function buildForm(array $form, FormStateInterface $form_state, $path = NULL, $is_last_page = NULL) {
+    public function buildForm(array $form, FormStateInterface $form_state) {
 
-    public function buildForm(array $form, FormStateInterface $form_state, $path = NULL) {
-
-        $form = \Drupal::formBuilder()->getForm($path);
+//        $form = \Drupal::formBuilder()->getForm($path);
 
         $form['actions']['#type'] = 'actions';
 
         $form['actions']['submit'] = array(
             '#type' => 'submit',
             '#name' => 'submit',
-            '#value' => 'Далее',
             '#button_type' => 'primary',
 //            '#ajax' => [
 //                'callback' => '::ajaxSubmitForm',
@@ -39,6 +35,8 @@ class WrapperForm extends FormBase {
 //                ],
 //            ],
         );
+
+        $form['actions']['submit']['#value'] = 'Далее';
 
         return $form;
     }
@@ -50,9 +48,17 @@ class WrapperForm extends FormBase {
     }
 
     public function submitForm(array &$form, FormStateInterface $form_state) {
+//        var_dump($form_state->getRebuildInfo());
+//
+//
         $service_class = \Drupal::service('application.service_class');
 
-        $service_class->nextPage($form_state);
+        $service_class->nextStep($form_state, $form);
+//        $this->localFunc();
+    }
+
+    public function localFunc() {
+        var_dump("ololo --- ");
     }
 
 //    public function ajaxSubmitForm(array &$form, FormStateInterface $form_state) {
