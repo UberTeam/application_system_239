@@ -9,28 +9,23 @@ namespace Drupal\application\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class RallyEq extends WrapperFormBase {
+class OrienteeringEq extends WrapperFormBase {
 
     public function getFormId() {
-        return 'rally_eq';
+        return 'orienteering_eq';
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
         $form = parent::buildForm($form, $form_state);
 
-        $form['swimming_candles'] = array(
+        $form['tools'] = array(
             '#type' => 'number',
-            '#title' => 'Свечи плавающие',
+            '#title' => 'Инструменты',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
-        );
-
-        $form['video_broadcast'] = array(
-            '#type' => 'checkbox',
-            '#title' => 'Хочу видеотрансляцию'
         );
 
         $form['printing_stuff_label'] = array(

@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains \Drupal\application\Form\Equipment\CompetitionEq.
+ * Contains \Drupal\application\Form\RallyEq.
  */
 
 namespace Drupal\application\Form;
@@ -9,103 +9,75 @@ namespace Drupal\application\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class CompetitionEq extends WrapperFormBase {
+class LunchEq extends WrapperFormBase {
 
     public function getFormId() {
-        return 'competition_eq';
+        return 'lunch_eq';
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
         $form = parent::buildForm($form, $form_state);
 
-        $form['marquee'] = array(
+        $form['garbage_bags'] = array(
             '#type' => 'number',
-            '#title' => 'Шатры',
+            '#title' => 'Синие икеевские сумки',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
         );
 
-        $form['walls'] = array(
-            '#type' => 'select',
-            '#title' => 'Стенки',
-            '#options' => [
-                '1' => 'Белые',
-                '2' => 'Зеленые'
-            ],
-            '#states' => array(
-                'disabled' => array(
-                    array(
-                        'input[name="marquee"]' => array('value' => '0'),
-                    ),
-                    array(
-                        'input[name="marquee"]' => array('value' => ''),
-                    )
-                ),
-            ),
-        );
-
-        $form['lightning'] = array(
+        $form['lunch_boxes'] = array(
             '#type' => 'number',
-            '#title' => 'Лампы',
+            '#title' => 'Ланчбоксы',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
         );
 
-        $form['tables'] = array(
+        $form['dishes'] = array(
             '#type' => 'number',
-            '#title' => 'Столы',
+            '#title' => 'Тарелки',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
         );
 
-        $form['chairs'] = array(
+        $form['grocery_list'] = array(
             '#type' => 'number',
-            '#title' => 'Табуретки',
+            '#title' => 'Список продуктов (меню?)',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
         );
 
-        $form['scotch_tape'] = array(
-            '#type' => 'hidden',
-            '#title' => 'Скотч',
+        $form['extinguisher'] = array(
+            '#type' => 'number',
+            '#title' => 'Огнетушитель',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
         );
 
-        $form['twill_tape'] = array(
-            '#type' => 'hidden',
-            '#title' => 'Киперная лента',
+        $form['perishables'] = array(
+            '#type' => 'number',
+            '#title' => 'Скоропортящиеся продукты',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
         );
 
-        $form['banner_label'] = array(
-            '#type' => 'label',
-            '#title' => 'Установка баннера'
+        $form['something_else'] = array(
+            '#type' => 'textarea',
+            '#title' => 'Что-то еще'
         );
 
-        $form['banner_installation'] = array(
-            '#type' => 'container',
-            '#attributes' => array(
-                'class' => 'form-container',
-            )
-        );
-
-        $form['banner_installation']['banner_installation_wor'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\BannerInstallationWor');
-        
         return $form;
     }
 //

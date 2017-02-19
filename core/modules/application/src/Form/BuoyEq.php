@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains \Drupal\application\Form\ElectricityEq.
+ * Contains \Drupal\application\Form\RallyEq.
  */
 
 namespace Drupal\application\Form;
@@ -9,53 +9,36 @@ namespace Drupal\application\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class ElectricityEq extends WrapperFormBase {
+class BuoyEq extends FormBase {
 
     public function getFormId() {
-        return 'electricity_eq';
+        return 'buoy_eq';
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
-        $form = parent::buildForm($form, $form_state);
-
-        $form['connected_devices'] = array(
+        $form['volume'] = array(
             '#type' => 'number',
-            '#title' => 'Количество подключаемых устройств',
+            '#title' => 'Объем',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
         );
 
-        $form['sockets'] = array(
-            '#type' => 'hidden',
-            '#title' => 'Количество необходимых розеток',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
-        );
-
-        $form['sockets_extenders'] = array(
-            '#type' => 'hidden',
-            '#title' => 'Количество удлинителей',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
-        );
-
-        $form['consumption_time'] = array(
+        $form['color'] = array(
             '#type' => 'textfield',
-            '#title' => 'Сроки потребления',
+            '#title' => 'Цвет',
             '#required' => TRUE
         );
 
-        $form['install_until'] = array(
-            '#type' => 'textfield',
-            '#title' => 'Срок готовности по работам установки',
-            '#required' => TRUE
+        $form['quantity'] = array(
+            '#type' => 'number',
+            '#title' => 'Количество',
+            '#required' => TRUE,
+            '#attributes' => array (
+                'min' => '0'
+            )
         );
 
         return $form;

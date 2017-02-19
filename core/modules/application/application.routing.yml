@@ -1,10 +1,12 @@
-application_form.rally_form:
-  path: '/rally_form'
+
+application_form.rally:
+  path: '/application/{service_name}/{page_id}'
   defaults:
-    _title: 'Заявка для Ночного Ралли'
-    _form: '\Drupal\application\Form\RallyForm'
+    _controller: '\Drupal\application\Controller\ServiceController::showPage'
   requirements:
     _permission: 'access content'
+    service_name: rally|bike_cross|obstacle|orienteering|bonfire|photocross|ktm|tvt|ddm|lunch|infocentre
+    page_id: \d+
 
 application_form.application_form:
   path: '/application_form'

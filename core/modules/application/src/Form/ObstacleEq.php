@@ -9,37 +9,26 @@ namespace Drupal\application\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class RallyEq extends WrapperFormBase {
+class ObstacleEq extends WrapperFormBase {
 
     public function getFormId() {
-        return 'rally_eq';
+        return 'obstacle_eq';
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
         $form = parent::buildForm($form, $form_state);
 
-        $form['swimming_candles'] = array(
+        $form['tools'] = array(
             '#type' => 'number',
-            '#title' => 'Свечи плавающие',
+            '#title' => 'Инструменты',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
         );
 
-        $form['video_broadcast'] = array(
-            '#type' => 'checkbox',
-            '#title' => 'Хочу видеотрансляцию'
-        );
-
-        $form['printing_stuff_label'] = array(
-            '#type' => 'label',
-            '#title' => 'Печатные материалы'
-        );
-
-        $form['printing_stuff'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PrintingStuffEq');
-
+    
         $form['something_else'] = array(
             '#type' => 'textarea',
             '#title' => 'Что-то еще'
@@ -47,7 +36,7 @@ class RallyEq extends WrapperFormBase {
 
         return $form;
     }
-
+//
 //    public function validateForm(array &$form, FormStateInterface $form_state) {
 //    //    if (strlen($form_state->getValue('name')) < 5) {
 //    //      $form_state->setErrorByName('name', $this->t('Name is too short.'));

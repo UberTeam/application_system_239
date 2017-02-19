@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains \Drupal\application\Form\Equipment\CompetitionEq.
+ * Contains \Drupal\application\Form\RallyEq.
  */
 
 namespace Drupal\application\Form;
@@ -9,106 +9,94 @@ namespace Drupal\application\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class CompetitionEq extends WrapperFormBase {
+class BonfireEq extends WrapperFormBase {
 
     public function getFormId() {
-        return 'competition_eq';
+        return 'bonfire_eq';
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
         $form = parent::buildForm($form, $form_state);
 
-        $form['marquee'] = array(
+        $form['projector'] = array(
             '#type' => 'number',
-            '#title' => 'Шатры',
+            '#title' => 'Проектор',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
         );
 
-        $form['walls'] = array(
-            '#type' => 'select',
-            '#title' => 'Стенки',
-            '#options' => [
-                '1' => 'Белые',
-                '2' => 'Зеленые'
-            ],
-            '#states' => array(
-                'disabled' => array(
-                    array(
-                        'input[name="marquee"]' => array('value' => '0'),
-                    ),
-                    array(
-                        'input[name="marquee"]' => array('value' => ''),
-                    )
-                ),
-            ),
-        );
-
-        $form['lightning'] = array(
+        $form['screen'] = array(
             '#type' => 'number',
-            '#title' => 'Лампы',
+            '#title' => 'Экран',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
         );
 
-        $form['tables'] = array(
+        $form['speakers'] = array(
             '#type' => 'number',
-            '#title' => 'Столы',
+            '#title' => 'Колонки',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
-        );
+        );    
 
-        $form['chairs'] = array(
+        $form['microphones'] = array(
             '#type' => 'number',
-            '#title' => 'Табуретки',
+            '#title' => 'Микрофоны',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
         );
 
-        $form['scotch_tape'] = array(
-            '#type' => 'hidden',
-            '#title' => 'Скотч',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
-        );
-
-        $form['twill_tape'] = array(
-            '#type' => 'hidden',
-            '#title' => 'Киперная лента',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
-        );
-
-        $form['banner_label'] = array(
-            '#type' => 'label',
-            '#title' => 'Установка баннера'
-        );
-
-        $form['banner_installation'] = array(
-            '#type' => 'container',
-            '#attributes' => array(
-                'class' => 'form-container',
-            )
-        );
-
-        $form['banner_installation']['banner_installation_wor'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\BannerInstallationWor');
         
+        $form['mixer'] = array(
+            '#type' => 'number',
+            '#title' => 'Микшер(?)',
+            '#required' => TRUE,
+            '#attributes' => array (
+                'min' => '0'
+            )
+        );
+
+        $form['petrol'] = array(
+            '#type' => 'checkbox',
+            '#title' => 'Бензин'
+        );
+
+        $form['jerrycan'] = array(
+            '#type' => 'number',
+            '#title' => 'Канистры',
+            '#required' => TRUE,
+            '#attributes' => array (
+                'min' => '0'
+            )
+        );
+
+        $form['rag'] = array(
+            '#type' => 'number',
+            '#title' => 'Тряпки',
+            '#required' => TRUE,
+            '#attributes' => array (
+                'min' => '0'
+            )
+        );          
+
+
+        $form['something_else'] = array(
+            '#type' => 'textarea',
+            '#title' => 'Что-то еще'
+        );
+
         return $form;
     }
-//
+
 //    public function validateForm(array &$form, FormStateInterface $form_state) {
 //    //    if (strlen($form_state->getValue('name')) < 5) {
 //    //      $form_state->setErrorByName('name', $this->t('Name is too short.'));

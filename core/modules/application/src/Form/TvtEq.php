@@ -9,36 +9,39 @@ namespace Drupal\application\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class RallyEq extends WrapperFormBase {
+class TvtEq extends WrapperFormBase {
 
     public function getFormId() {
-        return 'rally_eq';
+        return 'tvt_eq';
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
         $form = parent::buildForm($form, $form_state);
 
-        $form['swimming_candles'] = array(
+        $form['polypropilene_cord'] = array(
             '#type' => 'number',
-            '#title' => 'Свечи плавающие',
+            '#title' => 'Полипропиленовый шнур',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
         );
 
-        $form['video_broadcast'] = array(
-            '#type' => 'checkbox',
-            '#title' => 'Хочу видеотрансляцию'
+         $form['buoy'] = array(
+            '#type' => 'number',
+            '#title' => 'Буи',
+            '#required' => TRUE,
+            '#attributes' => array (
+                'min' => '0'
+            )
         );
 
-        $form['printing_stuff_label'] = array(
-            '#type' => 'label',
-            '#title' => 'Печатные материалы'
+        $form['pallets'] = array(
+            '#type' => 'textfield',
+            '#title' => 'Паллеты',
+            '#required' => TRUE
         );
-
-        $form['printing_stuff'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PrintingStuffEq');
 
         $form['something_else'] = array(
             '#type' => 'textarea',
@@ -47,7 +50,7 @@ class RallyEq extends WrapperFormBase {
 
         return $form;
     }
-
+//
 //    public function validateForm(array &$form, FormStateInterface $form_state) {
 //    //    if (strlen($form_state->getValue('name')) < 5) {
 //    //      $form_state->setErrorByName('name', $this->t('Name is too short.'));

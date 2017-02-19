@@ -1,0 +1,13 @@
+{#{{ attach_library('application-form') }}#}
+
+<div class="map">
+    {% for form in data.form_names %}
+        {% if (data.form_title == form[1])  %}
+            <div class="step active">{{ form[1] }}</div>
+        {% else %}
+            <div class="step">{{ form[1] }}</div>
+        {% endif %}
+    {% endfor %}
+</div>
+<h2>{{ data.form_title }}</h2>
+<div>{{ data.form }}</div>
