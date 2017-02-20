@@ -21,7 +21,7 @@ class LunchEq extends WrapperFormBase {
 
         $form['garbage_bags'] = array(
             '#type' => 'number',
-            '#title' => 'Синие икеевские сумки',
+            '#title' => 'Мусорные пакеты',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'

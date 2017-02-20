@@ -141,6 +141,15 @@ class ServiceController {
                 ['\RadioSubscribersTec', 'Радио абоненты'],
                 ['\BikeCrossEq', 'Специальное оборудование'],
             ),
+            "infocentre" => array(
+                ['\CompetitionEq', 'Оборудование соревнования'],
+                ['\SecretaryEq', 'Секретарское оборудование'],
+                ['\RadioSubscribersTec', 'Радио абоненты'],
+                ['\LaptopsTec', 'Ноутбуки'],
+                ['\ElectricityEq', 'Электричество'],
+                ['\InfocentreEq', 'Специальное оборудование'],
+                ['\InstallationWor', 'Установка инфоцентра'],  
+            ),
             "obstacle" => array(
                 ['\CompetitionEq', 'Оборудование соревнования'],
                 ['\SecretaryEq', 'Секретарское оборудование'],
