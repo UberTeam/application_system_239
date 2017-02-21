@@ -45,16 +45,6 @@ class LunchEq extends WrapperFormBase {
                 'min' => '0'
             )
         );
-
-        $form['grocery_list'] = array(
-            '#type' => 'number',
-            '#title' => 'Список продуктов (меню?)',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
-        );
-
         $form['extinguisher'] = array(
             '#type' => 'number',
             '#title' => 'Огнетушитель',
@@ -62,16 +52,21 @@ class LunchEq extends WrapperFormBase {
             '#attributes' => array (
                 'min' => '0'
             )
-        );
+        );    
+        //$form['grocery_list_label'] = array(
+        //    '#type' => 'label',
+        //    '#title' => 'Список продуктов длительного хранения'
+        //);
 
-        $form['perishables'] = array(
-            '#type' => 'number',
-            '#title' => 'Скоропортящиеся продукты',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
-        );
+        $form['grocery_list'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\grocery_list');
+
+        
+        //$form['perishables_label'] = array(
+         //   '#type' => 'label',
+         //   '#title' => 'Список скоропортящихся продуктов'
+        //);
+
+        $form['perishables'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\perishables');
 
         $form['something_else'] = array(
             '#type' => 'textarea',

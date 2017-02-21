@@ -19,26 +19,9 @@ class LaptopsTec extends WrapperFormBase {
 
         $form = parent::buildForm($form, $form_state);
         
-        $form['bring_by_myself'] = array(
-            '#type' => 'checkbox',
-            '#title' => 'Привезу сам'
-        );
-        $form['size'] = array(
-            '#type' => 'textfield',
-            '#title' => 'Формат'
-        );
-        $form['density'] = array(
-            '#type' => 'number',
-            '#title' => 'Плотность'
-        ); 
-
-        $form['quantity'] = array(
-            '#type' => 'number',
-            '#title' => 'Количество, листов',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
+        $form['grocery_list'] = array(
+            '#type' => 'textarea',
+            '#title' => 'Список продуктов длительного хранения'
         );
 
        

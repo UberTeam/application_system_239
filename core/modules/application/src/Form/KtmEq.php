@@ -20,7 +20,7 @@ class KtmEq extends WrapperFormBase {
         $form = parent::buildForm($form, $form_state);
 
         $form['polypropilene_cord'] = array(
-            '#type' => 'number',
+            '#type' => 'hidden',
             '#title' => 'Полипропиленовый шнур',
             '#required' => TRUE,
             '#attributes' => array (

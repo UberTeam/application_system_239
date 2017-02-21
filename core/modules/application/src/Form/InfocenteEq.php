@@ -20,7 +20,7 @@ class BonfireEq extends WrapperFormBase {
         $form = parent::buildForm($form, $form_state);
 
         $form['plasma'] = array(
-            '#type' => 'number',
+            '#type' => 'hidden',
             '#title' => 'Плазма',
             '#required' => TRUE,
             '#attributes' => array (
@@ -44,7 +44,7 @@ class BonfireEq extends WrapperFormBase {
             )
         );
         $form['mixer'] = array(
-            '#type' => 'number',
+            '#type' => 'hidden',
             '#title' => 'Микшер',
             '#required' => TRUE,
             '#attributes' => array (
@@ -69,19 +69,14 @@ class BonfireEq extends WrapperFormBase {
         );
         
         $form['dear_239_label'] = array(
-            '#type' => 'number',
+            '#type' => 'hidden',
             '#title' => 'Теплое ламповое 239',
             '#required' => TRUE,
             '#attributes' => array (
                 'class' => 'detached'
             )
         );
-        
-       $form['polypropilene_cord'] = array(
-            '#type' => 'checkbox',
-            '#title' => 'Теплое ламповое 239'
-        );
-
+      
         $form['paper_label'] = array(
             '#type' => 'label',
             '#title' => 'Бумага'
