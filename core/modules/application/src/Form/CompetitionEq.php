@@ -8,6 +8,7 @@ namespace Drupal\application\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element\RenderElement;
 
 class CompetitionEq extends WrapperFormBase {
 
@@ -77,7 +78,7 @@ class CompetitionEq extends WrapperFormBase {
         $form['scotch_tape'] = array(
             '#type' => 'hidden',
             '#title' => 'Скотч',
-            '#required' => TRUE,
+            '#required' => FALSE,
             '#attributes' => array (
                 'min' => '0'
             )
@@ -86,7 +87,7 @@ class CompetitionEq extends WrapperFormBase {
         $form['twill_tape'] = array(
             '#type' => 'hidden',
             '#title' => 'Киперная лента',
-            '#required' => TRUE,
+            '#required' => FALSE,
             '#attributes' => array (
                 'min' => '0'
             )
@@ -97,15 +98,8 @@ class CompetitionEq extends WrapperFormBase {
             '#title' => 'Установка баннера'
         );
 
-        $form['banner_installation'] = array(
-            '#type' => 'container',
-            '#attributes' => array(
-                'class' => 'form-container',
-            )
-        );
+        $form['banner_installation_wor'] = \Drupal::formBuilder()->buildForm('Drupal\application\Form\BannerInstallationWor', $form_state);
 
-        $form['banner_installation']['banner_installation_wor'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\BannerInstallationWor');
-        
         return $form;
     }
 //
