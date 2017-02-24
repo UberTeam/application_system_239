@@ -9,10 +9,10 @@ namespace Drupal\application\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class LaptopsTec extends WrapperFormBase {
+class PaperEq extends WrapperFormBase {
 
     public function getFormId() {
-        return 'laptops_tec';
+        return 'paper_eq';
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
