@@ -9,7 +9,7 @@ namespace Drupal\application\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class LaptopsTec extends WrapperFormBase {
+class GroceryListPur extends WrapperFormBase {
 
     public function getFormId() {
         return 'grocery_pur';
