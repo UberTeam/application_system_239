@@ -16,34 +16,31 @@ class BannerInstallationWor extends FormBase {
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
-
-/*        $form['name'] = array(
-            '#type' => 'textfield',
-            '#title' => 'Наименование баннера',
-            '#required' => TRUE
-        );*/
+        
 
         $form['name'] = array(
             '#type' => 'select',
             '#title' => 'Наименование баннера',
             '#options' => [
-                '1' => 'КТМ',
-                '2' => 'Лабиринт',
-                '3' => 'Конкурс обедов',
-                '4' => 'Ночное ралли',
-                '5' => 'Ориентирование',
-                '6' => 'Полоса',
-                '7' => 'ТВТ',
-                '8' => 'Старт',
-                '9' => 'Финиш',
+                'КТМ' => 'КТМ',
+                'Лабиринт' => 'Лабиринт',
+                'Конкурс обедов' => 'Конкурс обедов',
+                'Ночное ралли' => 'Ночное ралли',
+                'Ориентирование' => 'Ориентирование',
+                'Полоса' => 'Полоса',
+                'ТВТ' => 'ТВТ',
+                'Старт' => 'Старт',
+                'Финиш' => 'Финиш',
             ],
-            '#required' => TRUE
+            '#required' => TRUE,
+            'table_name' => 'banner_installation_wor'
         );
         
         $form['install_datetime'] = array(
             '#type' => 'date',
             '#title' => 'К какому сроку должно быть готово',
-            '#required' => TRUE
+            '#required' => TRUE,
+            'table_name' => 'banner_installation_wor'
         );
 
         return $form;

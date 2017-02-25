@@ -23,13 +23,15 @@ class BuoyEq extends FormBase {
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
-            )
+            ),
+            'table_name' => 'buoy_eq'
         );
 
         $form['color'] = array(
             '#type' => 'textfield',
             '#title' => 'Цвет',
-            '#required' => TRUE
+            '#required' => TRUE,
+            'table_name' => 'buoy_eq'
         );
 
         $form['quantity'] = array(
@@ -38,7 +40,8 @@ class BuoyEq extends FormBase {
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
-            )
+            ),
+            'table_name' => 'buoy_eq'
         );
 
         return $form;

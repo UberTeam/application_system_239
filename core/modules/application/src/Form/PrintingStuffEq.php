@@ -23,6 +23,7 @@ class PrintingStuffEq extends FormBase {
             '#attributes' => array(
                 'checked' => FALSE,
             ),
+            'table_name' => 'printing_stuff_eq'
         );
 
         $form['spoiler'] = array(
@@ -42,6 +43,7 @@ class PrintingStuffEq extends FormBase {
                     'input[name="make_me_layout"]' => array('checked' => TRUE),
                 ),
             ),
+            'table_name' => 'printing_stuff_eq'
         );
 
         $form['spoiler']['make_me_layout'] = array(
@@ -50,36 +52,40 @@ class PrintingStuffEq extends FormBase {
             '#attributes' => array(
                 'checked' => FALSE,
             ),
+            'table_name' => 'printing_stuff_eq'
         );
 
         $form['spoiler']['color'] = array(
             '#type' => 'select',
             '#title' => 'Тип печати',
             '#options' => [
-                '1' => 'Ч/б',
-                '2' => 'Цвет',
+                'Ч/б' => 'Ч/б',
+                'Цвет' => 'Цвет',
             ],
-            '#required' => TRUE
+            '#required' => TRUE,
+            'table_name' => 'printing_stuff_eq'
         );
 
         $form['spoiler']['size'] = array(
             '#type' => 'select',
             '#title' => 'Формат',
             '#options' => [
-                '1' => 'А1',
-                '2' => 'А2',
-                '3' => 'А3',
-                '4' => 'А4',
-                '5' => 'А5',
-                '6' => 'А6',
+                'А1' => 'А1',
+                'А2' => 'А2',
+                'А3' => 'А3',
+                'А4' => 'А4',
+                'А5' => 'А5',
+                'А6' => 'А6',
             ],
-            '#required' => TRUE
+            '#required' => TRUE,
+            'table_name' => 'printing_stuff_eq'
         );
 
         $form['spoiler']['paper_type'] = array(
             '#type' => 'textfield',
             '#title' => 'Тип бумаги',
-            '#required' => TRUE
+            '#required' => TRUE,
+            'table_name' => 'printing_stuff_eq'
         );
 
         $form['spoiler']['quantity'] = array(
@@ -88,7 +94,8 @@ class PrintingStuffEq extends FormBase {
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
-            )
+            ),
+            'table_name' => 'printing_stuff_eq'
         );
 
         $form['spoiler']['two_sided'] = array(
@@ -97,6 +104,7 @@ class PrintingStuffEq extends FormBase {
             '#attributes' => array(
                 'checked' => FALSE,
             ),
+            'table_name' => 'printing_stuff_eq'
         );
 
         $form['spoiler']['lamination'] = array(
@@ -107,7 +115,8 @@ class PrintingStuffEq extends FormBase {
             ),
         );
 
-        $form['spoiler']['files'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\FilesEq');
+//        $form['spoiler']['files'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\FilesEq');
+        $form = FilesEq::buildForm($form, $form_state);
 
         return $form;
     }

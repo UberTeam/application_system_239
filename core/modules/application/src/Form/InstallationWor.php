@@ -22,7 +22,8 @@ class InstallationWor extends WrapperFormBase {
         $form['install_datetime'] = array(
             '#type' => 'date',
             '#title' => 'К какому сроку должно быть готово',
-            '#required' => TRUE
+            '#required' => TRUE,
+            'table_name' => 'installation_wor'
         );
 
         return $form;

@@ -54,8 +54,8 @@ class BikeCrossEq extends WrapperFormBase {
             '#type' => 'label',
             '#title' => 'Печатные материалы'
         );
-        
-        $form['printing_stuff'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PrintingStuffEq');
+
+        $form = PrintingStuffEq::buildForm($form, $form_state);
 
         $form['something_else'] = array(
             '#type' => 'textarea',

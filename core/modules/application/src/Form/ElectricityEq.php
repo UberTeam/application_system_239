@@ -31,7 +31,7 @@ class ElectricityEq extends WrapperFormBase {
         $form['sockets'] = array(
             '#type' => 'hidden',
             '#title' => 'Количество необходимых розеток',
-            '#required' => TRUE,
+            '#required' => FALSE,
             '#attributes' => array (
                 'min' => '0'
             )
@@ -40,7 +40,7 @@ class ElectricityEq extends WrapperFormBase {
         $form['sockets_extenders'] = array(
             '#type' => 'hidden',
             '#title' => 'Количество удлинителей',
-            '#required' => TRUE,
+            '#required' => FALSE,
             '#attributes' => array (
                 'min' => '0'
             )

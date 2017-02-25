@@ -25,21 +25,24 @@ class LaptopsTec extends WrapperFormBase {
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
-            )
+            ),
+            'table_name' => 'laptops_tec'
         );
 
         $form['os'] = array(
             '#type' => 'select',
             '#title' => 'Операционная система',
             '#options' => [
-                '1' => 'Windows',
-                '2' => 'Linux'
-            ]
+                'Windows' => 'Windows',
+                'Linux' => 'Linux'
+            ],
+            'table_name' => 'laptops_tec'
         );
 
         $form['soft_list'] = array(
             '#type' => 'textfield',
-            '#title' => 'Список предустановленных программ'
+            '#title' => 'Список предустановленных программ',
+            'table_name' => 'laptops_tec'
         );
 
         return $form;

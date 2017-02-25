@@ -25,23 +25,26 @@ class WoodworkingVolumeWor extends WrapperFormBase {
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
-            )
+            ),
+            'table_name' => 'woodworking_volume_wor'
         );
 
         $form['nomenclature'] = array(
             '#type' => 'select',
             '#title' => 'Номенклатура',
             '#options' => [
-                '1' => 'Бревна',
-                '2' => 'Чурбаки',
-                '3' => 'Поколотые дрова'
-            ]
+                'Бревна' => 'Бревна',
+                'Чурбаки' => 'Чурбаки',
+                'Поколотые дрова' => 'Поколотые дрова'
+            ],
+            'table_name' => 'woodworking_volume_wor'
         );
 
         $form['delivery_datetime'] = array(
             '#type' => 'date',
             '#title' => 'Срок поставки',
-            '#required' => TRUE
+            '#required' => TRUE,
+            'table_name' => 'woodworking_volume_wor'
         );
 
         return $form;

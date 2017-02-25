@@ -22,7 +22,9 @@ class FlagsEq extends FormBase {
             '#title' => 'Печатные материалы'
         );
 
-        $form['printing_stuff'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PrintingStuffEq');
+//        $form['printing_stuff'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PrintingStuffEq');
+        $form = PrintingStuffEq::buildForm($form, $form_state);
+
 
         $form['shaft'] = array(
             '#type' => 'hidden',
@@ -30,7 +32,8 @@ class FlagsEq extends FormBase {
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
-            )
+            ),
+            'table_name' => 'flags_eq'
         );
 
         $form['tools'] = array(
@@ -39,6 +42,26 @@ class FlagsEq extends FormBase {
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
+            ),
+            'table_name' => 'flags_eq'
+        );
+
+        $form['plywood'] = array(
+            '#type' => 'checkbox',
+            '#title' => 'Добавить лист фанеры',
+            'table_name' => 'flags_eq'
+        );
+
+        $form['plywood_size'] = array(
+            '#type' => 'container',
+            '#title' => 'Размер',
+            '#states' => array(
+                'invisible' => array(
+                    'input[name="plywood"]' => array('checked' => false),
+                ),
+            ),
+            '#attributes' => array(
+                'class' => 'size_wrapper'
             )
         );
 
@@ -46,9 +69,19 @@ class FlagsEq extends FormBase {
             '#type' => 'html_tag',
             '#tag' => 'input',
             '#attributes' => array(
-                'type' => 'hidden',
+                'type' => 'text',
                 'maxlength' => '3',
                 'class' => array('size', 'width')
+            ),
+            'table_name' => 'flags_eq'
+        );
+
+        $form['plywood_size']['separator'] = array(
+            '#type' => 'html_tag',
+            '#tag' => 'div',
+            '#value' => '&#215;',
+            '#attributes' => array(
+                'class' => 'separator'
             ),
         );
 
@@ -56,10 +89,11 @@ class FlagsEq extends FormBase {
             '#type' => 'html_tag',
             '#tag' => 'input',
             '#attributes' => array(
-                'type' => 'hidden',
+                'type' => 'text',
                 'maxlength' => '3',
                 'class' => array('size', 'height')
             ),
+            'table_name' => 'flags_eq'
         );
 
         return $form;

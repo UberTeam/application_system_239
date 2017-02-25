@@ -23,7 +23,8 @@ class FilesEq extends FormBase {
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
-            )
+            ),
+            'table_name' => 'files_eq'
         );
 
         $form['density'] = array(
@@ -32,7 +33,8 @@ class FilesEq extends FormBase {
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
-            )
+            ),
+            'table_name' => 'files_eq'
         );
 
         $form['type'] = array(
@@ -41,7 +43,8 @@ class FilesEq extends FormBase {
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
-            )
+            ),
+            'table_name' => 'files_eq'
         );
 
         return $form;

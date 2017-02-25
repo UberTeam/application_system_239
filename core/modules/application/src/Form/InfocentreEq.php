@@ -82,7 +82,9 @@ class InfocentreEq extends WrapperFormBase {
             '#title' => 'Бумага'
         );
 
-        $form['paper'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PaperEq');
+//        $form['paper'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PaperEq');
+        $form = PaperEq::buildForm($form, $form_state);
+
 
 
         $form['flags_label'] = array(
@@ -90,7 +92,9 @@ class InfocentreEq extends WrapperFormBase {
             '#title' => 'Флаги'
         );
 
-        $form['flags'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\FlagsEq');
+//        $form['flags'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\FlagsEq');
+        $form = FlagsEq::buildForm($form, $form_state);
+
 
         $form['plywood_label'] = array(
             '#type' => 'label',
@@ -177,10 +181,8 @@ class InfocentreEq extends WrapperFormBase {
             '#title' => 'Печатные материалы'
         );
 
-        $form['printing_stuff'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PrintingStuffEq');
-
-                  
-
+//        $form['printing_stuff'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PrintingStuffEq');
+        $form = PrintingStuffEq::buildForm($form, $form_state);
 
         $form['something_else'] = array(
             '#type' => 'textarea',

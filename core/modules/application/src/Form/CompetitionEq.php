@@ -98,7 +98,7 @@ class CompetitionEq extends WrapperFormBase {
             '#title' => 'Установка баннера'
         );
 
-        $form['banner_installation_wor'] = \Drupal::formBuilder()->buildForm('Drupal\application\Form\BannerInstallationWor', $form_state);
+        $form = BannerInstallationWor::buildForm($form, $form_state);
 
         return $form;
     }

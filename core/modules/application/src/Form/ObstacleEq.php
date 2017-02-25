@@ -25,13 +25,15 @@ class ObstacleEq extends WrapperFormBase {
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
-            )
+            ),
+            'table_name' => 'obstacle_eq'
         );
 
     
         $form['something_else'] = array(
             '#type' => 'textarea',
-            '#title' => 'Что-то еще'
+            '#title' => 'Что-то еще',
+            'table_name' => 'obstacle_eq'
         );
 
         return $form;

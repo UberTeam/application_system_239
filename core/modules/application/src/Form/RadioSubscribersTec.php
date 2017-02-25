@@ -25,16 +25,18 @@ class RadioSubscribersTec extends WrapperFormBase {
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
-            )
+            ),
+            'table_name' => 'radio_subscribers_tec'
         );
 
         $form['usage_time'] = array(
             '#type' => 'select',
             '#title' => 'Период использования',
             '#options' => [
-                '1' => 'Временно',
-                '2' => 'Постоянно'
-            ]
+                'Временно' => 'Временно',
+                'Постоянно' => 'Постоянно'
+            ],
+            'table_name' => 'radio_subscribers_tec'
         );
 
         $form['temporary_time'] = array(
@@ -45,6 +47,7 @@ class RadioSubscribersTec extends WrapperFormBase {
                     'select[name="usage_time"]' => array('value' => '2')
                 ),
             ),
+            'table_name' => 'radio_subscribers_tec'
         );
 
         return $form;

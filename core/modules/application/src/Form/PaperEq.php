@@ -21,15 +21,18 @@ class PaperEq extends WrapperFormBase {
         
         $form['bring_by_myself'] = array(
             '#type' => 'checkbox',
-            '#title' => 'Привезу сам'
+            '#title' => 'Привезу сам',
+            'table_name' => 'paper_eq'
         );
         $form['size'] = array(
             '#type' => 'textfield',
-            '#title' => 'Формат'
+            '#title' => 'Формат',
+            'table_name' => 'paper_eq'
         );
         $form['density'] = array(
             '#type' => 'number',
-            '#title' => 'Плотность'
+            '#title' => 'Плотность',
+            'table_name' => 'paper_eq'
         ); 
 
         $form['quantity'] = array(
@@ -38,7 +41,8 @@ class PaperEq extends WrapperFormBase {
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
-            )
+            ),
+            'table_name' => 'paper_eq'
         );
 
        

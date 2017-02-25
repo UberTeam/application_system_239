@@ -73,15 +73,27 @@ class ServiceController {
 
         $form = $form_state->getUserInput();
 
+//        var_dump($formobj);
+
         foreach($form as $key => $field) {
-            if (preg_match('/form/', $key) === 0 && $key !== 'submit') {
+            if ($formobj[$key]['table_name']) {
                 array_push($result, array(
-                    'table_name' => $formobj['#attributes']['data-drupal-selector'],
+                    'table_name' => $formobj[$key]['table_name'],
                     'field_name' => $key,
                     'value' => $field,
                     'title' => $formobj[$key]['#title'],
                     'service' => $route_match->getRawParameter('service_name')
                 ));
+            } else {
+                if (preg_match('/form/', $key) === 0 && $key !== 'submit') {
+                    array_push($result, array(
+                        'table_name' => $formobj['#attributes']['data-drupal-selector'],
+                        'field_name' => $key,
+                        'value' => $field,
+                        'title' => $formobj[$key]['#title'],
+                        'service' => $route_match->getRawParameter('service_name')
+                    ));
+                }
             }
         }
 
