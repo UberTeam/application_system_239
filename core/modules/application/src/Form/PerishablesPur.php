@@ -12,7 +12,7 @@ use Drupal\Core\Form\FormStateInterface;
 class LaptopsTec extends WrapperFormBase {
 
     public function getFormId() {
-        return 'perishables_pur';
+        return 'perishables';
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {

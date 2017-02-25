@@ -66,7 +66,7 @@ class LunchEq extends WrapperFormBase {
          //   '#title' => 'Список скоропортящихся продуктов'
         //);
 
-        $form['perishables'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\perishables');
+        $form['perishables_pur'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PerishablesPur');
 //        $form = PrintingStuffEq::buildForm($form, $form_state);
 
         $form['something_else'] = array(
