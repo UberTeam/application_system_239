@@ -89,10 +89,7 @@ class BonfireEq extends WrapperFormBase {
         );          
 
 
-        $form['something_else'] = array(
-            '#type' => 'textarea',
-            '#title' => 'Что-то еще'
-        );
+        $form = SomethingElse::buildForm($form, $form_state);
 
         return $form;
     }

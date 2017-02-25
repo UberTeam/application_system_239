@@ -36,11 +36,7 @@ class OrienteeringEq extends WrapperFormBase {
 //        $form['printing_stuff'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PrintingStuffEq');
         $form = PrintingStuffEq::buildForm($form, $form_state);
 
-        $form['something_else'] = array(
-            '#type' => 'textarea',
-            '#title' => 'Что-то еще'
-        );
-
+        $form = SomethingElse::buildForm($form, $form_state);
         return $form;
     }
 

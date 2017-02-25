@@ -33,10 +33,7 @@ class DdmEq extends WrapperFormBase {
             '#title' => 'Велики'
         );
 
-        $form['something_else'] = array(
-            '#type' => 'textarea',
-            '#title' => 'Что-то еще'
-        );
+        $form = SomethingElse::buildForm($form, $form_state);
 
         return $form;
     }

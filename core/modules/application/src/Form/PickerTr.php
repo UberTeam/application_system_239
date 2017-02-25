@@ -9,7 +9,7 @@ namespace Drupal\application\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class TransportName extends WrapperFormBase {
+class PickerTr extends WrapperFormBase {
 
     public function getFormId() {
         return 'transport_name';
@@ -19,6 +19,7 @@ class TransportName extends WrapperFormBase {
     $form['will_be_used'] = array(
             '#type' => 'checkbox',
             '#title' => 'Будет ли использовано'
+            'table_name' => 'transport_name'
         );
     
     $form['sign_format'] = array(

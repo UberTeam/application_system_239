@@ -57,10 +57,7 @@ class BikeCrossEq extends WrapperFormBase {
 
         $form = PrintingStuffEq::buildForm($form, $form_state);
 
-        $form['something_else'] = array(
-            '#type' => 'textarea',
-            '#title' => 'Что-то еще'
-        );
+        $form = SomethingElse::buildForm($form, $form_state);
 
         return $form;
     }

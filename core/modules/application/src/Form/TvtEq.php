@@ -43,10 +43,7 @@ class TvtEq extends WrapperFormBase {
             '#required' => TRUE
         );
 
-        $form['something_else'] = array(
-            '#type' => 'textarea',
-            '#title' => 'Что-то еще'
-        );
+        $form = SomethingElse::buildForm($form, $form_state);
 
         return $form;
     }
