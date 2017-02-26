@@ -20,7 +20,7 @@ class FilesEq extends FormBase {
         $form['file_size'] = array(
             '#type' => 'select',
             '#title' => 'Размер',
-            '#required' => TRUE,
+            '#required' => FALSE,
             '#options' => [
                 'А1' => 'А1',
                 'А2' => 'А2',
@@ -35,7 +35,7 @@ class FilesEq extends FormBase {
         $form['density'] = array(
             '#type' => 'number',
             '#title' => 'Плотность (?)',
-            '#required' => TRUE,
+            '#required' => FALSE,
             '#attributes' => array (
                 'min' => '0'
             ),
@@ -45,7 +45,7 @@ class FilesEq extends FormBase {
         $form['type'] = array(
             '#type' => 'number',
             '#title' => 'Тип (?)',
-            '#required' => TRUE,
+            '#required' => FALSE,
             '#attributes' => array (
                 'min' => '0'
             ),

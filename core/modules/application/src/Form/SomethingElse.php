@@ -41,7 +41,7 @@ class SomethingElse extends WrapperFormBase {
     $form['quantity'] = array(
             '#type' => 'number',
             '#title' => 'Количество (шт.)',
-            '#required' => TRUE,
+            '#required' => FALSE,
             '#attributes' => array (
                 'min' => '0'
             ),

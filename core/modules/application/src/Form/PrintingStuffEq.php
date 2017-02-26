@@ -62,7 +62,7 @@ class PrintingStuffEq extends FormBase {
                 'Ч/б' => 'Ч/б',
                 'Цвет' => 'Цвет',
             ],
-            '#required' => TRUE,
+            '#required' => FALSE,
             'table_name' => 'printing_stuff_eq'
         );
 
@@ -77,21 +77,21 @@ class PrintingStuffEq extends FormBase {
                 'А5' => 'А5',
                 'А6' => 'А6',
             ],
-            '#required' => TRUE,
+            '#required' => FALSE,
             'table_name' => 'printing_stuff_eq'
         );
 
         $form['spoiler']['paper_type'] = array(
             '#type' => 'textfield',
             '#title' => 'Тип бумаги',
-            '#required' => TRUE,
+            '#required' => FALSE,
             'table_name' => 'printing_stuff_eq'
         );
 
         $form['spoiler']['quantity'] = array(
             '#type' => 'number',
             '#title' => 'Количество',
-            '#required' => TRUE,
+            '#required' => FALSE,
             '#attributes' => array (
                 'min' => '0'
             ),
@@ -113,8 +113,13 @@ class PrintingStuffEq extends FormBase {
             '#attributes' => array(
                 'checked' => FALSE,
             ),
+            'table_name' => 'printing_stuff_eq'
         );
 
+        $form['files_label'] = array(
+            '#type' => 'label',
+            '#title' => 'Файлики'
+        );
 //        $form['spoiler']['files'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\FilesEq');
         $form = FilesEq::buildForm($form, $form_state);
 
