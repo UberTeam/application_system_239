@@ -36,7 +36,7 @@ class BannerInstallationWor extends FormBase {
             'table_name' => 'banner_installation_wor'
         );
         
-        $form['install_datetime'] = array(
+        $form['install_until'] = array(
             '#type' => 'datelist',
             '#title' => 'К какому сроку должно быть готово',
             '#required' => TRUE,
