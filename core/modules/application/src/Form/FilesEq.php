@@ -17,13 +17,18 @@ class FilesEq extends FormBase {
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
-        $form['size'] = array(
-            '#type' => 'number',
+        $form['file_size'] = array(
+            '#type' => 'select',
             '#title' => 'Размер',
             '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            ),
+            '#options' => [
+                'А1' => 'А1',
+                'А2' => 'А2',
+                'А3' => 'А3',
+                'А4' => 'А4',
+                'А5' => 'А5',
+                'А6' => 'А6',
+            ],
             'table_name' => 'files_eq'
         );
 

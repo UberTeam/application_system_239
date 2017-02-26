@@ -36,6 +36,7 @@ class CompetitionEq extends WrapperFormBase {
                 '1' => 'Белые',
                 '2' => 'Зеленые'
             ],
+            '#required' => TRUE,
             '#states' => array(
                 'disabled' => array(
                     array(

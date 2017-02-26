@@ -9,7 +9,7 @@ namespace Drupal\application\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class TimePlceTr extends WrapperFormBase {
+class TimePlaceTr extends WrapperFormBase {
 
     public function getFormId() {
         return 'transport_place';

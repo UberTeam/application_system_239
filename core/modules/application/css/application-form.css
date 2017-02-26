@@ -12,6 +12,10 @@ label {
         margin-bottom: -10px;
     }
 
+.description {
+    font-style: italic;
+}
+
 .size-wrapper {
     display: flex;
     flex-flow: row nowrap;

@@ -22,19 +22,19 @@ class SomethingElse extends WrapperFormBase {
     
     $form['must_be_purchased'] = array(
             '#type' => 'checkbox',
-            '#title' => 'Надо купить'
+            '#title' => 'Надо купить',
             'table_name' => 'something_else'
         );
 
     $form['name'] = array(
-            '#type' => 'textarea',
-            '#title' => 'Наименование'
+            '#type' => 'textfield',
+            '#title' => 'Наименование',
             'table_name' => 'something_else'
         );
 
     $form['model'] = array(
             '#type' => 'textarea',
-            '#title' => 'Модель + ссылка'
+            '#title' => 'Модель + ссылка',
             'table_name' => 'something_else'
         );        
         
@@ -50,7 +50,7 @@ class SomethingElse extends WrapperFormBase {
     
     $form['provider'] = array(
             '#type' => 'textarea',
-            '#title' => 'Поставщик(?)'
+            '#title' => 'Поставщик(?)',
             'table_name' => 'something_else'
         );
             

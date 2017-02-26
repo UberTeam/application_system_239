@@ -18,7 +18,7 @@ class PickerTr extends WrapperFormBase {
 
     $form['will_be_used'] = array(
             '#type' => 'checkbox',
-            '#title' => 'Будет ли использовано'
+            '#title' => 'Будет ли использовано',
             'table_name' => 'transport_name'
         );
     
@@ -30,7 +30,7 @@ class PickerTr extends WrapperFormBase {
 
     $form['neat_package'] = array(
             '#type' => 'checkbox',
-            '#title' => 'Аккуратная упаковка'
+            '#title' => 'Аккуратная упаковка',
             'table_name' => 'transport_name'
         );
        
