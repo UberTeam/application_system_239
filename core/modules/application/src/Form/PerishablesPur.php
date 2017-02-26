@@ -22,9 +22,14 @@ class PerishablesPur extends WrapperFormBase {
         $form['grocery_pur'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\GroceryListPur');
 
         $form['shelf_life'] = array(
-            '#type' => 'textfield',
-            '#title' => 'Срок, к которому должно оставаться свежим',
-            'table_name' => 'shelf_life'
+            '#type' => 'datelist',
+            '#title' => 'К какому сроку должно оставаться свежим',
+            '#required' => TRUE,
+//            '#date_year_range'=>  '1900:2050',
+//            '#date_time_format' => 'H:i:s',
+//            '#date_date_format' => 'Y-m-d',
+            'table_name' => 'perishables',
+            '#description' => 'Введите дату',
         );
 
         

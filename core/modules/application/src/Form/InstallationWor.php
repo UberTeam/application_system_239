@@ -20,10 +20,14 @@ class InstallationWor extends WrapperFormBase {
         $form = parent::buildForm($form, $form_state);
 
         $form['install_datetime'] = array(
-            '#type' => 'date',
+            '#type' => 'datelist',
             '#title' => 'К какому сроку должно быть готово',
             '#required' => TRUE,
-            'table_name' => 'installation_wor'
+//            '#date_year_range'=>  '1900:2050',
+//            '#date_time_format' => 'H:i:s',
+//            '#date_date_format' => 'Y-m-d',
+            'table_name' => 'installation_wor',
+            '#description' => 'Введите дату',
         );
 
         return $form;
