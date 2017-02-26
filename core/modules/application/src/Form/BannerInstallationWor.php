@@ -35,7 +35,16 @@ class BannerInstallationWor extends FormBase {
             '#required' => TRUE,
             'table_name' => 'banner_installation_wor'
         );
-        
+
+        $form['polypropilene_cord'] = array(
+            '#type' => 'hidden',
+            '#title' => 'Полипропиленовый шнур',
+            '#required' => TRUE,
+            '#attributes' => array (
+                'class' => 'detached'
+            )
+        );
+
         $form['install_until'] = array(
             '#type' => 'datelist',
             '#title' => 'К какому сроку должно быть готово',
