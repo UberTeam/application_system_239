@@ -73,15 +73,40 @@ class ServiceController {
 
         $form = $form_state->getUserInput();
 
-//        var_dump($formobj);
+
 
         foreach($form as $key => $field) {
-            if ($formobj[$key]['table_name']) {
+
+            $current_field = NULL;
+
+            if (!$formobj[$key]) {
+                foreach ($formobj as $formobj_key => $formobj_val) {
+                    if ($formobj_val[$key]) {
+                        $current_field = $formobj_val[$key];
+                        break;
+                    }
+                }
+            } else {
+                $current_field = $formobj[$key];
+                if ($current_field['#type'] === 'datelist') {
+                    $form[$key]['month'] = $form[$key]['month'] / 10 < 1 ? '0' . $form[$key]['month'] : $form[$key]['month'];
+                    $form[$key]['minute'] = $form[$key]['minute'] / 10 < 1 ? '0' . $form[$key]['minute'] : $form[$key]['minute'];
+
+                    $date = $form[$key]['day'] . '.' . $form[$key]['month'] . '.' . $form[$key]['year'];
+                    $time = $form[$key]['hour'] . ':' . $form[$key]['minute'];
+
+                    $datetime = $date . ' ' . $time;
+
+                    $form[$key] = $datetime;
+                }
+            }
+
+            if ($current_field['table_name']) {
                 array_push($result, array(
-                    'table_name' => $formobj[$key]['table_name'],
+                    'table_name' => $current_field['table_name'],
                     'field_name' => $key,
-                    'value' => $field,
-                    'title' => $formobj[$key]['#title'],
+                    'value' => $form[$key],
+                    'title' => $current_field['#title'],
                     'service' => $route_match->getRawParameter('service_name')
                 ));
             } else {
@@ -89,7 +114,7 @@ class ServiceController {
                     array_push($result, array(
                         'table_name' => $formobj['#attributes']['data-drupal-selector'],
                         'field_name' => $key,
-                        'value' => $field,
+                        'value' => $form[$key],
                         'title' => $formobj[$key]['#title'],
                         'service' => $route_match->getRawParameter('service_name')
                     ));
