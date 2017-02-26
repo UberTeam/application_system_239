@@ -27,9 +27,14 @@ class TimePlaceTr extends WrapperFormBase {
             'table_name' => 'transport_place'
         );
     $form['date_time'] = array(
-            '#type' => 'textfield',
-            '#title' => 'Время подачи(?)',
-            'table_name' => 'transport_place'
+            '#type' => 'datelist',
+            '#title' => 'Время подачи',
+            '#required' => TRUE,
+//            '#date_year_range'=>  '1900:2050',
+//            '#date_time_format' => 'H:i:s',
+//            '#date_date_format' => 'Y-m-d',
+            'table_name' => 'transport_place',
+            '#description' => 'Введите дату',
         );  
 
         

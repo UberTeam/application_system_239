@@ -41,10 +41,14 @@ class WoodworkingVolumeWor extends WrapperFormBase {
         );
 
         $form['delivery_datetime'] = array(
-            '#type' => 'date',
+            '#type' => 'datelist',
             '#title' => 'Срок поставки',
             '#required' => TRUE,
-            'table_name' => 'woodworking_volume_wor'
+//            '#date_year_range'=>  '1900:2050',
+//            '#date_time_format' => 'H:i:s',
+//            '#date_date_format' => 'Y-m-d',
+            'table_name' => 'woodworking_volume_wor',
+            '#description' => 'Введите дату',
         );
 
         return $form;
