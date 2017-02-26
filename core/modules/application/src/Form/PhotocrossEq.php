@@ -109,7 +109,7 @@ class PhotocrossEq extends WrapperFormBase {
         );
 
         $form['polypropilene_cord'] = array(
-            '#type' => 'number',
+            '#type' => 'hidden',
             '#title' => 'Полипропиленовый шнур',
             '#required' => TRUE,
             '#attributes' => array (
@@ -127,7 +127,7 @@ class PhotocrossEq extends WrapperFormBase {
         );
 
         $form['staple_gun_brackets'] = array(
-            '#type' => 'number',
+            '#type' => 'hidden',
             '#title' => 'Скобы для стэплера',
             '#required' => TRUE,
             '#attributes' => array (
