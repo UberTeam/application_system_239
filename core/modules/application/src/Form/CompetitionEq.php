@@ -33,8 +33,8 @@ class CompetitionEq extends WrapperFormBase {
             '#type' => 'select',
             '#title' => 'Стенки',
             '#options' => [
-                '1' => 'Белые',
-                '2' => 'Зеленые'
+                'Белые' => 'Белые',
+                'Белые' => 'Зеленые'
             ],
             '#required' => TRUE,
             '#states' => array(
@@ -47,6 +47,11 @@ class CompetitionEq extends WrapperFormBase {
                     )
                 ),
             ),
+        );
+
+        $form['wall_mount'] = array(
+            '#type' => 'hidden',
+            '#title' => 'Крепежи для стен',
         );
 
         $form['lightning'] = array(
