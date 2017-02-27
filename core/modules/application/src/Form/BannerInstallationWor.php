@@ -35,17 +35,15 @@ class BannerInstallationWor extends FormBase {
             '#required' => TRUE,
             'table_name' => 'banner_installation_wor'
         );
-        
-//        $form['install_until'] = array(
-//            '#type' => 'datelist',
-//            '#title' => 'К какому сроку должно быть готово',
-//            '#required' => TRUE,
-////            '#date_year_range'=>  '1900:2050',
-////            '#date_time_format' => 'H:i:s',
-////            '#date_date_format' => 'Y-m-d',
-//            'table_name' => 'banner_installation_wor',
-//            '#description' => 'Введите дату',
-//        );
+
+        $form['polypropilene_cord'] = array(
+            '#type' => 'hidden',
+            '#title' => 'Полипропиленовый шнур',
+            '#required' => TRUE,
+            '#attributes' => array (
+                'class' => 'detached'
+            )
+        );
 
         $form = InstallationWor::buildForm($form, $form_state);
 

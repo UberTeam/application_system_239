@@ -163,8 +163,8 @@ class InfocentreEq extends WrapperFormBase {
                 'min' => '0'
             )
         );
-        $form['polypropilene_cord_label'] = array(
-            '#type' => 'number',
+        $form['polypropilene_cord'] = array(
+            '#type' => 'hidden',
             '#title' => 'Полипропиленовый шнур',
             '#required' => TRUE,
             '#attributes' => array (
@@ -172,10 +172,7 @@ class InfocentreEq extends WrapperFormBase {
             )
         );
         
-       $form['polypropilene_cord'] = array(
-            '#type' => 'checkbox',
-            '#title' => 'Полипропиленовый шнур'
-        );
+       
         $form['printing_stuff_label'] = array(
             '#type' => 'label',
             '#title' => 'Печатные материалы'

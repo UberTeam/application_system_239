@@ -19,6 +19,15 @@ class InstallationWor extends WrapperFormBase {
 
         $form = parent::buildForm($form, $form_state);
 
+        $form['competition_name'] = array(
+            '#type' => 'hidden',
+            '#title' => 'Название соревнования',
+            '#required' => TRUE,
+            '#attributes' => array (
+                'class' => 'detached'
+            )
+        );
+
         $form['install_datetime'] = array(
             '#type' => 'datelist',
             '#title' => 'К какому сроку должно быть готово',

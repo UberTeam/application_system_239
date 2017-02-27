@@ -20,7 +20,7 @@ class BonfireEq extends WrapperFormBase {
         $form = parent::buildForm($form, $form_state);
 
         $form['projector'] = array(
-            '#type' => 'number',
+            '#type' => 'hidden',
             '#title' => 'Проектор',
             '#required' => TRUE,
             '#attributes' => array (
@@ -29,7 +29,7 @@ class BonfireEq extends WrapperFormBase {
         );
 
         $form['screen'] = array(
-            '#type' => 'number',
+            '#type' => 'hidden',
             '#title' => 'Экран',
             '#required' => TRUE,
             '#attributes' => array (
