@@ -34,7 +34,7 @@ class CompetitionEq extends WrapperFormBase {
             '#title' => 'Стенки',
             '#options' => [
                 'Белые' => 'Белые',
-                'Белые' => 'Зеленые'
+                'Зеленые' => 'Зеленые'
             ],
             '#required' => TRUE,
             '#states' => array(
