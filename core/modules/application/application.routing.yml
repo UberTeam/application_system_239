@@ -1,5 +1,5 @@
 
-application_form.rally:
+application_form.service:
   path: '/application/{service_name}/{page_id}'
   defaults:
     _controller: '\Drupal\application\Controller\ServiceController::showPage'
@@ -7,6 +7,16 @@ application_form.rally:
     _permission: 'access content'
     service_name: rally|bike_cross|obstacle|orienteering|bonfire|photocross|ktm|tvt|ddm|lunch|infocentre
     page_id: \d+
+
+application_form.preview:
+  path: '/application/{service_name}/preview'
+  defaults:
+    _controller: '\Drupal\application\Controller\PreviewController::showPage'
+  requirements:
+    _permission: 'access content'
+    service_name: rally|bike_cross|obstacle|orienteering|bonfire|photocross|ktm|tvt|ddm|lunch|infocentre
+    page_id: \d+
+
 
 application_form.application_form:
   path: '/application_form'

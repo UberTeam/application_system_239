@@ -83,6 +83,17 @@ class ServiceController {
                 foreach ($formobj as $formobj_key => $formobj_val) {
                     if ($formobj_val[$key]) {
                         $current_field = $formobj_val[$key];
+                        if ($current_field['#type'] === 'datelist') {
+                            $form[$key]['month'] = $form[$key]['month'] / 10 < 1 ? '0' . $form[$key]['month'] : $form[$key]['month'];
+                            $form[$key]['minute'] = $form[$key]['minute'] / 10 < 1 ? '0' . $form[$key]['minute'] : $form[$key]['minute'];
+
+                            $date = $form[$key]['day'] . '.' . $form[$key]['month'] . '.' . $form[$key]['year'];
+                            $time = $form[$key]['hour'] . ':' . $form[$key]['minute'];
+
+                            $datetime = $date . ' ' . $time;
+
+                            $form[$key] = $datetime;
+                        }
                         break;
                     }
                 }
@@ -104,19 +115,23 @@ class ServiceController {
             if ($current_field['table_name']) {
                 array_push($result, array(
                     'table_name' => $current_field['table_name'],
+                    'parent' => $formobj['#attributes']['data-drupal-selector'],
                     'field_name' => $key,
                     'value' => $form[$key],
                     'title' => $current_field['#title'],
-                    'service' => $route_match->getRawParameter('service_name')
+                    'service' => $route_match->getRawParameter('service_name'),
+                    'type' => $current_field['#type']
                 ));
             } else {
                 if (preg_match('/form/', $key) === 0 && $key !== 'submit') {
                     array_push($result, array(
                         'table_name' => $formobj['#attributes']['data-drupal-selector'],
+                        'parent' => $formobj['#attributes']['data-drupal-selector'],
                         'field_name' => $key,
                         'value' => $form[$key],
-                        'title' => $formobj[$key]['#title'],
-                        'service' => $route_match->getRawParameter('service_name')
+                        'title' => $current_field['#title'],
+                        'service' => $route_match->getRawParameter('service_name'),
+                        'type' => $current_field['#type']
                     ));
                 }
             }
@@ -128,10 +143,10 @@ class ServiceController {
 //            'title' => 'Шатер'
 //        );
 //
-        $db_logic = \Drupal::service('application.rally_model');
+        $db_logic = \Drupal::service('application.service_model');
 
         foreach ($result as $row) {
-            $db_logic->add($row);;
+            $db_logic->add($row);
         }
 
         $is_last = $this->lastPageFlag();

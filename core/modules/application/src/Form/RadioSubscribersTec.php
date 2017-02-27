@@ -39,12 +39,32 @@ class RadioSubscribersTec extends WrapperFormBase {
             'table_name' => 'radio_subscribers_tec'
         );
 
-        $form['temporary_time'] = array(
-            '#type' => 'textfield',
+        $form['temporary'] = array(
+            '#type' => 'container',
             '#title' => 'Срок использования временных',
             '#states' => array(
                 'disabled' => array(
-                    'select[name="usage_time"]' => array('value' => '2')
+                    'select[name="usage_time"]' => array('value' => 'Постоянно')
+                ),
+            ),
+        );
+
+        $form['temporary']['temporary_start'] = array(
+            '#type' => 'datelist',
+            '#title' => 'Начало:',
+            '#states' => array(
+                'disabled' => array(
+                    'select[name="usage_time"]' => array('value' => 'Постоянно')
+                ),
+            ),
+            'table_name' => 'radio_subscribers_tec'
+        );
+        $form['temporary']['temporary_end'] = array(
+            '#type' => 'datelist',
+            '#title' => 'Окончание:',
+            '#states' => array(
+                'disabled' => array(
+                    'select[name="usage_time"]' => array('value' => 'Постоянно')
                 ),
             ),
             'table_name' => 'radio_subscribers_tec'

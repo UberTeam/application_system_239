@@ -85,3 +85,55 @@ div.map {
         div.map .step.active {
             background: #efefef;
         }
+
+div.output {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-self: flex-start;
+}
+
+    div.output > div.list {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        box-sizing: border-box;
+        margin-top: 18px;
+    }
+
+    div.output > div.list > div:nth-child(2n + 1) {
+        /*font-weight: 600;*/
+        box-sizing: border-box;
+        padding: 8px 22px 8px 18px;
+        background: #b0c7e9;
+        margin-right: 30px;
+
+        font-family: 'Verdana';
+        font-size: 12px;
+        color: #4d596a;
+    }
+
+        div.output > div.list > div:nth-child(2n + 1)::after {
+            content: '';
+            position: absolute;
+            margin-left: 10px;
+            background: #b0c7e9;
+
+            margin-top: -3px;
+            height: 24px;
+            width: 24px;
+            /*padding: 11px;*/
+            box-sizing: border-box;
+
+            transform: rotate(45deg);
+        }
+
+    div.output > div.list > div:nth-child(2n) {
+        box-sizing: border-box;
+        padding: 0;
+
+        font-family: 'Verdana';
+        font-size: 14px;
+        color: #4d596a;
+    }

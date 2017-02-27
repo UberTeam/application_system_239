@@ -1,9 +1,12 @@
 services:
- application.rally_model:
-  class: Drupal\application\Model\RallyModel
+ application.service_model:
+  class: Drupal\application\Model\ServiceModel
   arguments: ['@database']
   tags:
    - { name: backend_overridable }
 
  application.service_class:
    class: Drupal\application\Controller\ServiceController
+
+ application.preview_class:
+   class: Drupal\application\Controller\PreviewController

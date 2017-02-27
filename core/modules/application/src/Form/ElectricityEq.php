@@ -47,16 +47,19 @@ class ElectricityEq extends WrapperFormBase {
         );
 
         $form['consumption_time'] = array(
-            '#type' => 'textfield',
-            '#title' => 'Сроки потребления',
-            '#required' => TRUE
+            '#type' => 'datelist',
+            '#title' => 'Время окончания потребления',
+            '#required' => TRUE,
+//            '#date_year_range'=>  '1900:2050',
+//            '#date_time_format' => 'H:i:s',
+//            '#date_date_format' => 'Y-m-d',
+//            '#description' => 'Введите дату',
         );
 
-        $form['install_until'] = array(
-            '#type' => 'textfield',
-            '#title' => 'Срок готовности по работам установки',
-            '#required' => TRUE
-        );
+        $form = InstallationWor::buildForm($form, $form_state);
+
+        $form['install_datetime']['#title'] = 'Срок готовности по работам установки';
+
 
         return $form;
     }

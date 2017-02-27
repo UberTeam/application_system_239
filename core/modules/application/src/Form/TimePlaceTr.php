@@ -29,7 +29,7 @@ class TimePlaceTr extends WrapperFormBase {
     $form['date_time'] = array(
             '#type' => 'datelist',
             '#title' => 'Время подачи',
-            '#required' => TRUE,
+            '#required' => FALSE,
 //            '#date_year_range'=>  '1900:2050',
 //            '#date_time_format' => 'H:i:s',
 //            '#date_date_format' => 'Y-m-d',
