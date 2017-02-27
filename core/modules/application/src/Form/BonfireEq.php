@@ -22,19 +22,13 @@ class BonfireEq extends WrapperFormBase {
         $form['projector'] = array(
             '#type' => 'hidden',
             '#title' => 'Проектор',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
+            '#required' => FALSE,
         );
 
         $form['screen'] = array(
             '#type' => 'hidden',
             '#title' => 'Экран',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
+            '#required' => FALSE,
         );
 
         $form['speakers'] = array(

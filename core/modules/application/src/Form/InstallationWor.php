@@ -22,10 +22,7 @@ class InstallationWor extends WrapperFormBase {
         $form['competition_name'] = array(
             '#type' => 'hidden',
             '#title' => 'Название соревнования',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'class' => 'detached'
-            )
+            '#required' => FALSE,
         );
 
         $form['install_datetime'] = array(

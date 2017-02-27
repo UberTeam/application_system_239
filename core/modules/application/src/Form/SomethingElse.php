@@ -33,7 +33,7 @@ class SomethingElse extends WrapperFormBase {
         );
 
     $form['model'] = array(
-            '#type' => 'textarea',
+            '#type' => 'textfield',
             '#title' => 'Модель + ссылка',
             'table_name' => 'something_else'
         );        
