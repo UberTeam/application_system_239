@@ -22,7 +22,6 @@ class KtmEq extends WrapperFormBase {
         $form['polypropilene_cord'] = array(
             '#type' => 'hidden',
             '#title' => 'Полипропиленовый шнур',
-            '#required' => FALSE,
         );
 
         $form['plywood_label'] = array(

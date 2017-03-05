@@ -159,9 +159,6 @@ class InfocentreEq extends WrapperFormBase {
             '#type' => 'hidden',
             '#title' => 'Полипропиленовый шнур',
             '#required' => false,
-            '#attributes' => array (
-                'class' => 'detached'
-            )
         );
         
        
