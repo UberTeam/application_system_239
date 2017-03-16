@@ -43,7 +43,7 @@ class TvtEq extends WrapperFormBase {
             '#required' => TRUE
         );
 
-        $form = SomethingElse::buildForm($form, $form_state);
+        $form = SomethingElse::buildForm($form, $form_state, "tvt_eq");
 
         return $form;
     }
