@@ -9,12 +9,12 @@ namespace Drupal\application\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class TimePlaceTr extends WrapperFormBase {
+class TransportTimePlaceTr extends WrapperFormBase {
 
     public function getFormId() {
-        return 'transport_place';
+        return 'transport_time_place_tr';
     }
-    public function buildForm(array $form, FormStateInterface $form_state) {
+    public function buildForm(array $form, FormStateInterface $form_state, $parent_name = NULL) {
 
     $form['spoiler']['layout'] = array(
             '#type' => 'file',
@@ -24,7 +24,8 @@ class TimePlaceTr extends WrapperFormBase {
                     'input[name="make_me_layout"]' => array('checked' => TRUE),
                 ),
             ),
-            'table_name' => 'transport_place'
+            'table_name' => 'transport_time_place_tr',
+            'parent_name' => $parent_name
         );
     $form['date_time'] = array(
             '#type' => 'datelist',
@@ -33,8 +34,9 @@ class TimePlaceTr extends WrapperFormBase {
 //            '#date_year_range'=>  '1900:2050',
 //            '#date_time_format' => 'H:i:s',
 //            '#date_date_format' => 'Y-m-d',
-            'table_name' => 'transport_place',
+            'table_name' => 'transport_time_place_tr',
             '#description' => 'Введите дату',
+            'parent_name' => $parent_name
         );  
 
         

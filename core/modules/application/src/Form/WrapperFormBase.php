@@ -19,8 +19,6 @@ abstract class WrapperFormBase extends FormBase {
 //    public function buildForm(array $form, FormStateInterface $form_state, $path = NULL, $is_last_page = NULL) {
     public function buildForm(array $form, FormStateInterface $form_state) {
 
-//        $form = \Drupal::formBuilder()->getForm($path);
-
         $form['actions']['#type'] = 'actions';
 
         $form['actions']['submit'] = array(
