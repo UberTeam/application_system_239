@@ -32,18 +32,14 @@ class ElectricityEq extends WrapperFormBase {
             '#type' => 'hidden',
             '#title' => 'Количество необходимых розеток',
             '#required' => FALSE,
-            '#attributes' => array (
-                'min' => '0'
-            )
+            
         );
 
         $form['sockets_extenders'] = array(
             '#type' => 'hidden',
             '#title' => 'Количество удлинителей',
             '#required' => FALSE,
-            '#attributes' => array (
-                'min' => '0'
-            )
+            
         );
 
         $form['consumption_time'] = array(

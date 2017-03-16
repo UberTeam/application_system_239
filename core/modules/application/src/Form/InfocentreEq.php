@@ -22,10 +22,7 @@ class InfocentreEq extends WrapperFormBase {
         $form['plasma'] = array(
             '#type' => 'hidden',
             '#title' => 'Плазма',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
+            '#required' => FALSE,
         );
         $form['speakers'] = array(
             '#type' => 'number',
@@ -46,11 +43,9 @@ class InfocentreEq extends WrapperFormBase {
         $form['mixer'] = array(
             '#type' => 'hidden',
             '#title' => 'Микшер',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
+            '#required' => FALSE,
         );
+
         $form['megaphone'] = array(
             '#type' => 'number',
             '#title' => 'Мегафон',
@@ -71,10 +66,7 @@ class InfocentreEq extends WrapperFormBase {
         $form['dear_239_label'] = array(
             '#type' => 'hidden',
             '#title' => 'Теплое ламповое 239',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'class' => 'detached'
-            )
+            '#required' => FALSE,
         );
       
         $form['paper_label'] = array(
@@ -166,10 +158,7 @@ class InfocentreEq extends WrapperFormBase {
         $form['polypropilene_cord'] = array(
             '#type' => 'hidden',
             '#title' => 'Полипропиленовый шнур',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'class' => 'detached'
-            )
+            '#required' => false,
         );
         
        

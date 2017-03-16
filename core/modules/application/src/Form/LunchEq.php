@@ -48,10 +48,7 @@ class LunchEq extends WrapperFormBase {
         $form['extinguisher'] = array(
             '#type' => 'hidden',
             '#title' => 'Огнетушитель',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
+            '#required' => FALSE,
         );    
         $form['grocery_pur_label'] = array(
             '#type' => 'label',

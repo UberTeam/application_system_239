@@ -129,10 +129,7 @@ class PhotocrossEq extends WrapperFormBase {
         $form['staple_gun_brackets'] = array(
             '#type' => 'hidden',
             '#title' => 'Скобы для стэплера',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'min' => '0'
-            )
+            '#required' => FALSE,
         );
 
         $form = SomethingElse::buildForm($form, $form_state, "photocross_eq");

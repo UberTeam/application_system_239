@@ -19,11 +19,10 @@ class InstallationWor extends WrapperFormBase {
 
         $form = parent::buildForm($form, $form_state);
 
+
 //        $form['competition_name'] = array(
 //            '#type' => 'hidden',
-//            '#title' => 'Название соревнования',
-//            '#required' => TRUE,
-//            '#value' =>
+//            '#title' => 'Название соревнования'
 //            '#attributes' => array (
 //                'class' => 'detached'
 //            ),

@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains \Drupal\application\Form\RallyEq.
+ * Contains \Drupal\application\Form\SecretaryEq.
  */
 
 namespace Drupal\application\Form;
@@ -9,42 +9,53 @@ namespace Drupal\application\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class TvtEq extends WrapperFormBase {
+class SecretaryEq extends WrapperFormBase {
 
     public function getFormId() {
-        return 'tvt_eq';
+        return 'secretary_eq';
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
         $form = parent::buildForm($form, $form_state);
 
-        $form['polypropilene_cord'] = array(
-            '#type' => 'hidden',
-            '#title' => 'Полипропиленовый шнур',
-            '#required' => FALSE,
-        );
-
-         $form['buoy'] = array(
+        $form['yellow_west'] = array(
             '#type' => 'number',
-            '#title' => 'Буи',
+            '#title' => 'Желтые жилетки',
             '#required' => TRUE,
             '#attributes' => array (
                 'min' => '0'
             )
         );
 
-        $form['pallets'] = array(
-            '#type' => 'textfield',
-            '#title' => 'Паллеты',
-            '#required' => TRUE
-        );
+        $form['tablets'] = array(
+            '#type' => 'number',
+            '#title' => 'Планшеты (клипборды)',
+            '#required' => TRUE,
+            '#attributes' => array (
+                'min' => '0'
+            )
+        ); 
 
-        $form = SomethingElse::buildForm($form, $form_state, "tvt_eq");
+        $form['pen'] = array(
+            '#type' => 'number',
+            '#title' => 'Ручки',
+            '#required' => TRUE,
+            '#attributes' => array (
+                'min' => '0'
+            )
+        );
+        $form = PaperEq::buildForm($form, $form_state);
+
+        $form = PrintingStuffEq::buildForm($form, $form_state);
+
+        $form = SomethingElse::buildForm($form, $form_state);
+
+//        $form['actions']['submit']['#value'] = 'Дальше';
 
         return $form;
     }
-//
+
 //    public function validateForm(array &$form, FormStateInterface $form_state) {
 //    //    if (strlen($form_state->getValue('name')) < 5) {
 //    //      $form_state->setErrorByName('name', $this->t('Name is too short.'));

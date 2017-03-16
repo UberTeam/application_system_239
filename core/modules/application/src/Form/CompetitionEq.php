@@ -85,18 +85,14 @@ class CompetitionEq extends WrapperFormBase {
             '#type' => 'hidden',
             '#title' => 'Скотч',
             '#required' => FALSE,
-            '#attributes' => array (
-                'min' => '0'
-            )
+            
         );
 
         $form['twill_tape'] = array(
             '#type' => 'hidden',
             '#title' => 'Киперная лента',
             '#required' => FALSE,
-            '#attributes' => array (
-                'min' => '0'
-            )
+            
         );
 
         $form['banner_label'] = array(
