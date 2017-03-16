@@ -86,9 +86,9 @@ class KtmEq extends WrapperFormBase {
         );
 
 //        $form['printing_stuff'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PrintingStuffEq');
-        $form = PrintingStuffEq::buildForm($form, $form_state);
+        $form = PrintingStuffEq::buildForm($form, $form_state, "ktm_eq");
 
-        $form = SomethingElse::buildForm($form, $form_state);
+        $form = SomethingElse::buildForm($form, $form_state, "ktm_eq");
 
         return $form;
     }

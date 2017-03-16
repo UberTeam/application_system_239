@@ -15,7 +15,7 @@ class FilesEq extends FormBase {
         return 'files_eq';
     }
 
-    public function buildForm(array $form, FormStateInterface $form_state) {
+    public function buildForm(array $form, FormStateInterface $form_state, $parent_name = NULL) {
 
         $form['file_size'] = array(
             '#type' => 'select',
@@ -29,7 +29,8 @@ class FilesEq extends FormBase {
                 'А5' => 'А5',
                 'А6' => 'А6',
             ],
-            'table_name' => 'files_eq'
+            'table_name' => 'files_eq',
+            'parent_name' => $parent_name
         );
 
         $form['density'] = array(
@@ -39,7 +40,8 @@ class FilesEq extends FormBase {
             '#attributes' => array (
                 'min' => '0'
             ),
-            'table_name' => 'files_eq'
+            'table_name' => 'files_eq',
+            'parent_name' => $parent_name
         );
 
         $form['type'] = array(
@@ -49,7 +51,8 @@ class FilesEq extends FormBase {
             '#attributes' => array (
                 'min' => '0'
             ),
-            'table_name' => 'files_eq'
+            'table_name' => 'files_eq',
+            'parent_name' => $parent_name
         );
 
         return $form;

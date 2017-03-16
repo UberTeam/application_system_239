@@ -56,7 +56,7 @@ class ElectricityEq extends WrapperFormBase {
 //            '#description' => 'Введите дату',
         );
 
-        $form = InstallationWor::buildForm($form, $form_state);
+        $form = InstallationWor::buildForm($form, $form_state, "electricity_eq");
 
         $form['install_datetime']['#title'] = 'Срок готовности по работам установки';
 

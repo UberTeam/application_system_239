@@ -30,7 +30,7 @@ class ObstacleEq extends WrapperFormBase {
         );
 
     
-        $form = SomethingElse::buildForm($form, $form_state);
+        $form = SomethingElse::buildForm($form, $form_state, "obstacle_eq");
 
         return $form;
     }

@@ -83,7 +83,7 @@ class InfocentreEq extends WrapperFormBase {
         );
 
 //        $form['paper'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PaperEq');
-        $form = PaperEq::buildForm($form, $form_state);
+        $form = PaperEq::buildForm($form, $form_state, "infocentre_eq");
 
 
 
@@ -93,7 +93,7 @@ class InfocentreEq extends WrapperFormBase {
         );
 
 //        $form['flags'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\FlagsEq');
-        $form = FlagsEq::buildForm($form, $form_state);
+        $form = FlagsEq::buildForm($form, $form_state, "infocentre_eq");
 
 
         $form['plywood_label'] = array(
@@ -179,9 +179,9 @@ class InfocentreEq extends WrapperFormBase {
         );
 
 //        $form['printing_stuff'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PrintingStuffEq');
-        $form = PrintingStuffEq::buildForm($form, $form_state);
+        $form = PrintingStuffEq::buildForm($form, $form_state, "infocentre_eq");
 
-        $form = SomethingElse::buildForm($form, $form_state);
+        $form = SomethingElse::buildForm($form, $form_state, "infocentre_eq");
 
         return $form;
     }

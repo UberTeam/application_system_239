@@ -104,7 +104,7 @@ class CompetitionEq extends WrapperFormBase {
             '#title' => 'Установка баннера'
         );
 
-        $form = BannerInstallationWor::buildForm($form, $form_state);
+        $form = BannerInstallationWor::buildForm($form, $form_state, "competition_eq");
 
         return $form;
     }

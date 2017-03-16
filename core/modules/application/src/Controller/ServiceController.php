@@ -73,7 +73,10 @@ class ServiceController {
 
         $form = $form_state->getUserInput();
 
+        $current_service_name = $route_match->getRawParameter('service_name');
+        $current_service_id = $route_match->getRawParameter('page_id');
 
+        $this->definePage($current_service_name, $current_service_id);
 
         foreach($form as $key => $field) {
 
@@ -115,10 +118,12 @@ class ServiceController {
             if ($current_field['table_name']) {
                 array_push($result, array(
                     'table_name' => $current_field['table_name'],
-                    'parent' => $formobj['#attributes']['data-drupal-selector'],
+                    'parent' => $current_field['parent_name'] ? $current_field['parent_name'] : $current_field['table_name'],
+                    'root' => $formobj['#attributes']['data-drupal-selector'],
                     'field_name' => $key,
                     'value' => $form[$key],
                     'title' => $current_field['#title'],
+                    'root_rus' => $this->current_form[1],
                     'service' => $route_match->getRawParameter('service_name'),
                     'type' => $current_field['#type']
                 ));
@@ -126,10 +131,12 @@ class ServiceController {
                 if (preg_match('/form/', $key) === 0 && $key !== 'submit') {
                     array_push($result, array(
                         'table_name' => $formobj['#attributes']['data-drupal-selector'],
-                        'parent' => $formobj['#attributes']['data-drupal-selector'],
+                        'parent' => $current_field['parent_name'] ? $current_field['parent_name'] : $formobj['#attributes']['data-drupal-selector'],
+                        'root' => $formobj['#attributes']['data-drupal-selector'],
                         'field_name' => $key,
                         'value' => $form[$key],
                         'title' => $current_field['#title'],
+                        'root_rus' => $this->current_form[1],
                         'service' => $route_match->getRawParameter('service_name'),
                         'type' => $current_field['#type']
                     ));
@@ -153,9 +160,23 @@ class ServiceController {
 
         $page_number = $route_match->getRawParameter('page_id');
 
-        if (!$is_last) {
+        if ($is_last) {
+            $this->toPreview($form_state, $route_match->getRawParameter('service_name'));
+        } else {
             $this->nextPage($form_state, $page_number);
         }
+    }
+
+    private function toPreview($form, $service){
+
+        $path = "/application/" . $service . "/preview";
+
+        $path = $GLOBALS['base_root'] . $path;
+
+        $url = Url::fromUri($path);
+
+        return $form->setRedirectUrl($url);
+
     }
 
     private function nextPage($form, $page_number) {
@@ -258,6 +279,13 @@ class ServiceController {
                 ['\RadioSubscribersTec', 'Радио абоненты'],
                 ['\WoodworkingVolumeWor', 'Объем древообработки'],
                 ['\LunchEq', 'Специальное оборудование'],
+            ),
+            "secretariat" => array(
+                ['\CompetitionEq', 'Оборудование соревнования'],
+                ['\RadioSubscribersTec', 'Радио абоненты'],
+                ['\LaptopsTec', 'Ноутбуки'],
+                ['\ElectricityEq', 'Электричество'],
+                ['\SecretariatEq', 'Специальное оборудование'],
             ),
         );
         return $all_forms;

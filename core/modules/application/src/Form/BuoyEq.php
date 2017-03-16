@@ -15,7 +15,7 @@ class BuoyEq extends FormBase {
         return 'buoy_eq';
     }
 
-    public function buildForm(array $form, FormStateInterface $form_state) {
+    public function buildForm(array $form, FormStateInterface $form_state, $parent_name = NULL) {
 
         $form['volume'] = array(
             '#type' => 'number',
@@ -24,14 +24,16 @@ class BuoyEq extends FormBase {
             '#attributes' => array (
                 'min' => '0'
             ),
-            'table_name' => 'buoy_eq'
+            'table_name' => 'buoy_eq',
+            'parent_name' => $parent_name
         );
 
         $form['color'] = array(
             '#type' => 'textfield',
             '#title' => 'Цвет',
             '#required' => TRUE,
-            'table_name' => 'buoy_eq'
+            'table_name' => 'buoy_eq',
+            'parent_name' => $parent_name
         );
 
         $form['quantity'] = array(
@@ -41,7 +43,8 @@ class BuoyEq extends FormBase {
             '#attributes' => array (
                 'min' => '0'
             ),
-            'table_name' => 'buoy_eq'
+            'table_name' => 'buoy_eq',
+            'parent_name' => $parent_name
         );
 
         return $form;

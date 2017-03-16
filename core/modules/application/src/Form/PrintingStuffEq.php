@@ -15,7 +15,7 @@ class PrintingStuffEq extends FormBase {
         return 'printing_stuff_eq';
     }
 
-    public function buildForm(array $form, FormStateInterface $form_state) {
+    public function buildForm(array $form, FormStateInterface $form_state, $parent_name = NULL) {
 
         $form['print_by_myself'] = array(
             '#type' => 'checkbox',
@@ -23,7 +23,8 @@ class PrintingStuffEq extends FormBase {
             '#attributes' => array(
                 'checked' => FALSE,
             ),
-            'table_name' => 'printing_stuff_eq'
+            'table_name' => 'printing_stuff_eq',
+            'parent_name' => $parent_name
         );
 
         $form['spoiler'] = array(
@@ -43,7 +44,8 @@ class PrintingStuffEq extends FormBase {
                     'input[name="make_me_layout"]' => array('checked' => TRUE),
                 ),
             ),
-            'table_name' => 'printing_stuff_eq'
+            'table_name' => 'printing_stuff_eq',
+            'parent_name' => $parent_name
         );
 
         $form['spoiler']['make_me_layout'] = array(
@@ -52,7 +54,8 @@ class PrintingStuffEq extends FormBase {
             '#attributes' => array(
                 'checked' => FALSE,
             ),
-            'table_name' => 'printing_stuff_eq'
+            'table_name' => 'printing_stuff_eq',
+            'parent_name' => $parent_name
         );
 
         $form['spoiler']['color'] = array(
@@ -63,7 +66,8 @@ class PrintingStuffEq extends FormBase {
                 'Цвет' => 'Цвет',
             ],
             '#required' => FALSE,
-            'table_name' => 'printing_stuff_eq'
+            'table_name' => 'printing_stuff_eq',
+            'parent_name' => $parent_name
         );
 
         $form['spoiler']['size'] = array(
@@ -78,14 +82,16 @@ class PrintingStuffEq extends FormBase {
                 'А6' => 'А6',
             ],
             '#required' => FALSE,
-            'table_name' => 'printing_stuff_eq'
+            'table_name' => 'printing_stuff_eq',
+            'parent_name' => $parent_name
         );
 
         $form['spoiler']['paper_type'] = array(
             '#type' => 'textfield',
             '#title' => 'Тип бумаги',
             '#required' => FALSE,
-            'table_name' => 'printing_stuff_eq'
+            'table_name' => 'printing_stuff_eq',
+            'parent_name' => $parent_name
         );
 
         $form['spoiler']['quantity'] = array(
@@ -95,7 +101,8 @@ class PrintingStuffEq extends FormBase {
             '#attributes' => array (
                 'min' => '0'
             ),
-            'table_name' => 'printing_stuff_eq'
+            'table_name' => 'printing_stuff_eq',
+            'parent_name' => $parent_name
         );
 
         $form['spoiler']['two_sided'] = array(
@@ -104,7 +111,8 @@ class PrintingStuffEq extends FormBase {
             '#attributes' => array(
                 'checked' => FALSE,
             ),
-            'table_name' => 'printing_stuff_eq'
+            'table_name' => 'printing_stuff_eq',
+            'parent_name' => $parent_name
         );
 
         $form['spoiler']['lamination'] = array(
@@ -113,7 +121,8 @@ class PrintingStuffEq extends FormBase {
             '#attributes' => array(
                 'checked' => FALSE,
             ),
-            'table_name' => 'printing_stuff_eq'
+            'table_name' => 'printing_stuff_eq',
+            'parent_name' => $parent_name
         );
 
         $form['files_label'] = array(
@@ -121,7 +130,7 @@ class PrintingStuffEq extends FormBase {
             '#title' => 'Файлики'
         );
 //        $form['spoiler']['files'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\FilesEq');
-        $form = FilesEq::buildForm($form, $form_state);
+        $form = FilesEq::buildForm($form, $form_state, "printing_stuff_eq");
 
         return $form;
     }

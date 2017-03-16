@@ -15,24 +15,27 @@ class PaperEq extends WrapperFormBase {
         return 'paper_eq';
     }
 
-    public function buildForm(array $form, FormStateInterface $form_state) {
+    public function buildForm(array $form, FormStateInterface $form_state, $parent_name = NULL) {
 
         $form = parent::buildForm($form, $form_state);
         
         $form['bring_by_myself'] = array(
             '#type' => 'checkbox',
             '#title' => 'Привезу сам',
-            'table_name' => 'paper_eq'
+            'table_name' => 'paper_eq',
+            'parent_name' => $parent_name
         );
         $form['size'] = array(
             '#type' => 'textfield',
             '#title' => 'Формат',
-            'table_name' => 'paper_eq'
+            'table_name' => 'paper_eq',
+            'parent_name' => $parent_name
         );
         $form['density'] = array(
             '#type' => 'number',
             '#title' => 'Плотность',
-            'table_name' => 'paper_eq'
+            'table_name' => 'paper_eq',
+            'parent_name' => $parent_name
         ); 
 
         $form['quantity'] = array(
@@ -42,7 +45,8 @@ class PaperEq extends WrapperFormBase {
             '#attributes' => array (
                 'min' => '0'
             ),
-            'table_name' => 'paper_eq'
+            'table_name' => 'paper_eq',
+            'parent_name' => $parent_name
         );
 
        

@@ -15,18 +15,20 @@ class InstallationWor extends WrapperFormBase {
         return 'installation_wor';
     }
 
-    public function buildForm(array $form, FormStateInterface $form_state) {
+    public function buildForm(array $form, FormStateInterface $form_state, $parent_name = NULL) {
 
         $form = parent::buildForm($form, $form_state);
 
-        $form['competition_name'] = array(
-            '#type' => 'hidden',
-            '#title' => 'Название соревнования',
-            '#required' => TRUE,
-            '#attributes' => array (
-                'class' => 'detached'
-            )
-        );
+//        $form['competition_name'] = array(
+//            '#type' => 'hidden',
+//            '#title' => 'Название соревнования',
+//            '#required' => TRUE,
+//            '#value' =>
+//            '#attributes' => array (
+//                'class' => 'detached'
+//            ),
+//            'parent' => $parent
+//        );
 
         $form['install_datetime'] = array(
             '#type' => 'datelist',
@@ -37,6 +39,7 @@ class InstallationWor extends WrapperFormBase {
 //            '#date_date_format' => 'Y-m-d',
             'table_name' => 'installation_wor',
             '#description' => 'Введите дату',
+            'parent_name' => $parent_name
         );
 
         return $form;

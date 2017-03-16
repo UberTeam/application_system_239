@@ -12,26 +12,29 @@ use Drupal\Core\Form\FormStateInterface;
 class PickerTr extends WrapperFormBase {
 
     public function getFormId() {
-        return 'transport_name';
+        return 'picker_tr';
     }
-    public function buildForm(array $form, FormStateInterface $form_state) {
+    public function buildForm(array $form, FormStateInterface $form_state, $parent_name = NULL) {
 
     $form['will_be_used'] = array(
             '#type' => 'checkbox',
             '#title' => 'Будет ли использовано',
-            'table_name' => 'transport_name'
+            'table_name' => 'picker_tr',
+            'parent_name' => $parent_name
         );
     
     $form['sign_format'] = array(
             '#type' => 'textfield',
             '#title' => 'Формат подписи',
-            'table_name' => 'transport_name'
+            'table_name' => 'picker_tr',
+            'parent_name' => $parent_name
         ); 
 
     $form['neat_package'] = array(
             '#type' => 'checkbox',
             '#title' => 'Аккуратная упаковка',
-            'table_name' => 'transport_name'
+            'table_name' => 'picker_tr',
+            'parent_name' => $parent_name
         );
        
 

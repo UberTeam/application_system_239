@@ -12,17 +12,18 @@ use Drupal\Core\Form\FormStateInterface;
 class GroceryListPur extends WrapperFormBase {
 
     public function getFormId() {
-        return 'grocery_pur';
+        return 'grocery_list_pur';
     }
 
-    public function buildForm(array $form, FormStateInterface $form_state) {
+    public function buildForm(array $form, FormStateInterface $form_state, $parent_name = NULL) {
 
         $form = parent::buildForm($form, $form_state);
 
         $form['name'] = array(
-            '#type' => 'textarea',
-            '#title' => 'Наименование'
-            'table_name' => 'grocery_pur'
+            '#type' => 'textfield',
+            '#title' => 'Наименование',
+            'table_name' => 'grocery_list_pur',
+            'parent_name' => $parent_name
         );
         
         $form['dimension'] = array(
@@ -32,7 +33,8 @@ class GroceryListPur extends WrapperFormBase {
             '#attributes' => array (
                 'min' => '0'
             ),
-            'table_name' => 'grocery_pur'
+            'table_name' => 'grocery_list_pur',
+            'parent_name' => $parent_name
         );
         $form['quantity'] = array(
             '#type' => 'number',
@@ -41,17 +43,20 @@ class GroceryListPur extends WrapperFormBase {
             '#attributes' => array (
                 'min' => '0'
             ),
-            'table_name' => 'grocery_pur'
+            'table_name' => 'grocery_list_pur',
+            'parent_name' => $parent_name
         );
         $form['mark'] = array(
-            '#type' => 'textarea',
-            '#title' => 'Предпочтительная марка'
-            'table_name' => 'grocery_pur'
+            '#type' => 'textfield',
+            '#title' => 'Предпочтительная марка',
+            'table_name' => 'grocery_list_pur',
+            'parent_name' => $parent_name
         );
         $form['provider'] = array(
-            '#type' => 'textarea',
-            '#title' => 'Поставщик(?)'
-            'table_name' => 'grocery_pur'
+            '#type' => 'textfield',
+            '#title' => 'Поставщик(?)',
+            'table_name' => 'grocery_list_pur',
+            'parent_name' => $parent_name
         );
 
         

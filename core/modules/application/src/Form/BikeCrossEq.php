@@ -55,9 +55,9 @@ class BikeCrossEq extends WrapperFormBase {
             '#title' => 'Печатные материалы'
         );
 
-        $form = PrintingStuffEq::buildForm($form, $form_state);
+        $form = PrintingStuffEq::buildForm($form, $form_state, "bike_cross_eq");
 
-        $form = SomethingElse::buildForm($form, $form_state);
+        $form = SomethingElse::buildForm($form, $form_state, "bike_cross_eq");
 
         return $form;
     }

@@ -135,10 +135,7 @@ class PhotocrossEq extends WrapperFormBase {
             )
         );
 
-    
-        
-
-        $form = SomethingElse::buildForm($form, $form_state);
+        $form = SomethingElse::buildForm($form, $form_state, "photocross_eq");
 
         return $form;
     }

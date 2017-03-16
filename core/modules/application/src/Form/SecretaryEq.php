@@ -19,7 +19,7 @@ class SecretaryEq extends WrapperFormBase {
 
         $form = parent::buildForm($form, $form_state);
 
-        $form['yellow_west'] = array(
+        $form['yellow_vest'] = array(
             '#type' => 'number',
             '#title' => 'Желтые жилетки',
             '#required' => TRUE,

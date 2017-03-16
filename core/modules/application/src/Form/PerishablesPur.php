@@ -12,14 +12,16 @@ use Drupal\Core\Form\FormStateInterface;
 class PerishablesPur extends WrapperFormBase {
 
     public function getFormId() {
-        return 'perishables';
+        return 'perishables_pur';
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
         $form = parent::buildForm($form, $form_state);
         
-        $form['grocery_pur'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\GroceryListPur');
+//        $form['grocery_pur'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\GroceryListPur');
+        $form = GroceryListPur::buildForm($form, $form_state, "perishables_pur");
+
 
         $form['shelf_life'] = array(
             '#type' => 'datelist',
@@ -28,7 +30,7 @@ class PerishablesPur extends WrapperFormBase {
 //            '#date_year_range'=>  '1900:2050',
 //            '#date_time_format' => 'H:i:s',
 //            '#date_date_format' => 'Y-m-d',
-            'table_name' => 'perishables',
+            'table_name' => 'perishables_pur',
             '#description' => 'Введите дату',
         );
 

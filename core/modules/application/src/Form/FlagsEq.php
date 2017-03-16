@@ -15,7 +15,7 @@ class FlagsEq extends FormBase {
         return 'flags_eq';
     }
 
-    public function buildForm(array $form, FormStateInterface $form_state) {
+    public function buildForm(array $form, FormStateInterface $form_state, $parent_name = NULL) {
 
         $form['printing_stuff_label'] = array(
             '#type' => 'label',
@@ -23,7 +23,7 @@ class FlagsEq extends FormBase {
         );
 
 //        $form['printing_stuff'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PrintingStuffEq');
-        $form = PrintingStuffEq::buildForm($form, $form_state);
+        $form = PrintingStuffEq::buildForm($form, $form_state, "flags_eq");
 
 
         $form['shaft'] = array(
@@ -33,7 +33,8 @@ class FlagsEq extends FormBase {
             '#attributes' => array (
                 'min' => '0'
             ),
-            'table_name' => 'flags_eq'
+            'table_name' => 'flags_eq',
+            'parent_name' => $parent_name
         );
 
         $form['tools'] = array(
@@ -43,13 +44,15 @@ class FlagsEq extends FormBase {
             '#attributes' => array (
                 'min' => '0'
             ),
-            'table_name' => 'flags_eq'
+            'table_name' => 'flags_eq',
+            'parent_name' => $parent_name
         );
 
         $form['plywood'] = array(
             '#type' => 'checkbox',
             '#title' => 'Добавить лист фанеры',
-            'table_name' => 'flags_eq'
+            'table_name' => 'flags_eq',
+            'parent_name' => $parent_name
         );
 
         $form['plywood_size'] = array(
@@ -73,7 +76,8 @@ class FlagsEq extends FormBase {
                 'maxlength' => '3',
                 'class' => array('size', 'width')
             ),
-            'table_name' => 'flags_eq'
+            'table_name' => 'flags_eq',
+            'parent_name' => $parent_name
         );
 
         $form['plywood_size']['separator'] = array(
@@ -93,7 +97,8 @@ class FlagsEq extends FormBase {
                 'maxlength' => '3',
                 'class' => array('size', 'height')
             ),
-            'table_name' => 'flags_eq'
+            'table_name' => 'flags_eq',
+            'parent_name' => $parent_name
         );
 
         return $form;

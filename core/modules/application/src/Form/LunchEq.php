@@ -58,17 +58,17 @@ class LunchEq extends WrapperFormBase {
             '#title' => 'Список продуктов длительного хранения'
         );
 
-        $form = GroceryListPur::buildForm($form, $form_state);
+        $form = GroceryListPur::buildForm($form, $form_state, "lunch_eq");
 
         $form['prishables_label'] = array(
             '#type' => 'label',
             '#title' => 'Список скоропортящихся продуктов'
         );
 
-        $form = PerishablesPur::buildForm($form, $form_state);
+        $form = PerishablesPur::buildForm($form, $form_state, "lunch_eq");
 //        $form = PrintingStuffEq::buildForm($form, $form_state);
 
-        $form = SomethingElse::buildForm($form, $form_state);
+        $form = SomethingElse::buildForm($form, $form_state, "lunch_eq");
 
         return $form;
     }

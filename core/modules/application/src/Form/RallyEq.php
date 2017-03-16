@@ -39,9 +39,9 @@ class RallyEq extends WrapperFormBase {
         );
 
 //        $form['printing_stuff'] = \Drupal::formBuilder()->getForm('Drupal\application\Form\PrintingStuffEq');
-        $form = PrintingStuffEq::buildForm($form, $form_state);
+        $form = PrintingStuffEq::buildForm($form, $form_state, "rally_eq");
 
-        $form = SomethingElse::buildForm($form, $form_state);
+        $form = SomethingElse::buildForm($form, $form_state, "rally_eq");
         return $form;
     }
 

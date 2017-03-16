@@ -89,7 +89,7 @@ class BonfireEq extends WrapperFormBase {
         );          
 
 
-        $form = SomethingElse::buildForm($form, $form_state);
+        $form = SomethingElse::buildForm($form, $form_state, "bonfire_eq");
 
         return $form;
     }

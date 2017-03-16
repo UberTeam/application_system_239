@@ -15,8 +15,7 @@ class BannerInstallationWor extends FormBase {
         return 'banner_installation_wor';
     }
 
-    public function buildForm(array $form, FormStateInterface $form_state) {
-        
+    public function buildForm(array $form, FormStateInterface $form_state, $parent_name = NULL) {
 
         $form['name'] = array(
             '#type' => 'select',
@@ -33,19 +32,21 @@ class BannerInstallationWor extends FormBase {
                 'Финиш' => 'Финиш',
             ],
             '#required' => TRUE,
-            'table_name' => 'banner_installation_wor'
+            'table_name' => 'banner_installation_wor',
+            'parent_name' => $parent_name
         );
 
         $form['polypropilene_cord'] = array(
             '#type' => 'hidden',
             '#title' => 'Полипропиленовый шнур',
-            '#required' => TRUE,
+            '#required' => FALSE,
             '#attributes' => array (
                 'class' => 'detached'
-            )
+            ),
+            'parent_name' => $parent_name
         );
 
-        $form = InstallationWor::buildForm($form, $form_state);
+        $form = InstallationWor::buildForm($form, $form_state, "banner_installation_wor");
 
         return $form;
     }

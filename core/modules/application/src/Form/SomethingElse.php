@@ -14,28 +14,31 @@ class SomethingElse extends WrapperFormBase {
     public function getFormId() {
         return 'something_else';
     }
-    public function buildForm(array $form, FormStateInterface $form_state) {
+    public function buildForm(array $form, FormStateInterface $form_state, $parent_name = NULL) {
 
-    $form = TimePlaceTr::buildForm($form, $form_state);
+    $form = TransportTimePlaceTr::buildForm($form, $form_state, "something_else");
     
-    $form = PickerTr::buildForm($form, $form_state); 
+    $form = PickerTr::buildForm($form, $form_state, "something_else");
     
     $form['must_be_purchased'] = array(
             '#type' => 'checkbox',
             '#title' => 'Надо купить',
-            'table_name' => 'something_else'
+            'table_name' => 'something_else',
+            'parent_name' => $parent_name
         );
 
     $form['name'] = array(
             '#type' => 'textfield',
             '#title' => 'Наименование',
-            'table_name' => 'something_else'
+            'table_name' => 'something_else',
+            'parent_name' => $parent_name
         );
 
     $form['model'] = array(
             '#type' => 'textarea',
             '#title' => 'Модель + ссылка',
-            'table_name' => 'something_else'
+            'table_name' => 'something_else',
+            'parent_name' => $parent_name
         );        
         
     $form['quantity'] = array(
@@ -45,13 +48,15 @@ class SomethingElse extends WrapperFormBase {
             '#attributes' => array (
                 'min' => '0'
             ),
-            'table_name' => 'something_else'
+            'table_name' => 'something_else',
+            'parent_name' => $parent_name
         );
     
     $form['provider'] = array(
             '#type' => 'textarea',
             '#title' => 'Поставщик(?)',
-            'table_name' => 'something_else'
+            'table_name' => 'something_else',
+            'parent_name' => $parent_name
         );
             
        

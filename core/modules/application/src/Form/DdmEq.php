@@ -33,7 +33,7 @@ class DdmEq extends WrapperFormBase {
             '#title' => 'Велики'
         );
 
-        $form = SomethingElse::buildForm($form, $form_state);
+        $form = SomethingElse::buildForm($form, $form_state, "ddm_eq");
 
         return $form;
     }
