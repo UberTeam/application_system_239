@@ -5,7 +5,7 @@ application_form.service:
     _controller: '\Drupal\application\Controller\ServiceController::showPage'
   requirements:
     _permission: 'access content'
-    service_name: rally|bike_cross|obstacle|orienteering|bonfire|photocross|ktm|tvt|ddm|lunch|infocentre
+    service_name: rally|bike_cross|obstacle|orienteering|bonfire|photocross|ktm|tvt|ddm|lunch|infocentre|secretariat
     page_id: \d+
 
 application_form.preview:
